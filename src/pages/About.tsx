@@ -3,7 +3,7 @@ import { GlassCard, GlassCardContent } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, ExternalLink, Calendar, MapPin, Github, Eye, Camera, Music, BookOpen, Gamepad2 } from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
-
+import { Link } from "react-router-dom";
 
 
 const About = () => {
@@ -533,7 +533,7 @@ const About = () => {
               className="hover:bg-white/20 hover:text-white border-white/20"
               asChild
             >
-              <a href="/">Back to Home</a>
+              <Link to="/">Back to Home</Link>
             </GlassButton>
           </div>
         </div>
