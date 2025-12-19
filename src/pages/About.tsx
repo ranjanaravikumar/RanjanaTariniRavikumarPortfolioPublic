@@ -5,7 +5,9 @@ import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, Externa
 import backgroundImage from "@/assets/background.jpg"
 
 
+
 const About = () => {
+  const getBasePath = (path: string) => `/RanjanaTariniRavikumarPortfolioPublic${path}`
   const [activeSection, setActiveSection] = useState<string | null>(null)
 
   const sections = [
@@ -16,6 +18,8 @@ const About = () => {
     { id: 'interests', label: 'Interests', icon: Lightbulb },
     { id: 'certifications', label: 'Certifications', icon: Award }
   ]
+
+
 
   const renderContent = () => {
     switch (activeSection) {
@@ -530,7 +534,7 @@ const About = () => {
               className="hover:bg-white/20 hover:text-white border-white/20"
               asChild
             >
-              <a href="/">Back to Home</a>
+              <a href={getBasePath("/")}>Back to Home</a>
             </GlassButton>
           </div>
         </div>
