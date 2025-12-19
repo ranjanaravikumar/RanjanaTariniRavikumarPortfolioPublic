@@ -141,7 +141,6 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Whisper</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">GPT-4</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">LLM Integration</span>
-                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Payment Processing</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                 </div>
                 <div className="flex gap-3">
@@ -322,13 +321,13 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">Software Development Intern</h3>
-                    <p className="text-white/80">Tech Company</p>
+                    <h3 className="text-xl font-semibold text-white">Research Volunteer</h3>
+                    <p className="text-white/80">Fae Labs, Texas, USA</p>
                   </div>
                   <div className="text-right text-white/70 text-sm">
                     <div className="flex items-center gap-1 mb-1">
                       <Calendar className="h-4 w-4" />
-                      June 2023 - August 2023
+                      April 2025 – August 2025
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
@@ -337,33 +336,82 @@ const About = () => {
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80">
-                  <li>• Developed and maintained web applications using React and Node.js</li>
-                  <li>• Collaborated with cross-functional teams to deliver high-quality software</li>
-                  <li>• Implemented responsive design and optimized application performance</li>
+                  <li>• Optimized YOLO-NAS training from 12 hours to 13 minutes per epoch (55x speedup) using GPU acceleration and mixed precision on 2,000+ fruit images.
+                  </li>
+                  <li>• Built an automated dataset curation pipeline with Roboflow and Label Studio, standardizing YOLO annotations and eliminating 90%+ malformed label files.
+                  </li>
+                  <li>• Integrated WhatsApp Cloud API with AWS Lambda, EC2, and DynamoDB to automate image ingestion and metadata storage at scale.
+                  </li>
                 </ul>
               </div>
 
-              {/* Experience 2 */}
+              {/* Experience 2: Excelacom */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">Research Assistant</h3>
-                    <p className="text-white/80">Arizona State University</p>
+                    <h3 className="text-xl font-semibold text-white">Python Intern</h3>
+                    <p className="text-white/80">Excelacom Technologies, Chennai, India</p>
                   </div>
                   <div className="text-right text-white/70 text-sm">
                     <div className="flex items-center gap-1 mb-1">
                       <Calendar className="h-4 w-4" />
-                      January 2023 - Present
+                      Jan 2024 – May 2024
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
-                      Tempe, AZ
+                      Chennai, India
                     </div>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80">
-                  <li>• Conducted research in machine learning and data analysis</li>
-                  <li>• Published findings in academic conferences and journals</li>
+                  <li>
+                    • Reverse‑engineered an existing RASA + LangChain chatbot pipeline to understand
+                    intent classification and entity extraction flows.
+                  </li>
+                  <li>
+                    • Cleaned and prepared datasets with Python and Pandas for CatBoost experiments,
+                    improving model performance by ~15% through feature engineering.
+                  </li>
+                  <li>
+                    • Participated in weekly code reviews, suggesting optimizations that reduced batch
+                    preprocessing time by ~12%.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Experience 3: SmartInternz */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">
+                      Modern Application Development Trainee
+                    </h3>
+                    <p className="text-white/80">SmartInternz, Hyderabad, India</p>
+                  </div>
+                  <div className="text-right text-white/70 text-sm">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Calendar className="h-4 w-4" />
+                      May 2023 – Jul 2023
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="h-4 w-4" />
+                      Hyderabad, India
+                    </div>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-white/80">
+                  <li>
+                    • Built Spring Boot REST APIs for an e‑commerce app (FOODYS) handling registration,
+                    restaurant data, and order workflows using Git for collaboration.
+                  </li>
+                  <li>
+                    • Designed MongoDB schemas and aggregation pipelines for personalized
+                    recommendations and real‑time restaurant availability.
+                  </li>
+                  <li>
+                    • Implemented React.js UI and containerized the stack with Docker and Kubernetes,
+                    enabling horizontal scaling to 1,000+ concurrent sessions.
+                  </li>
                 </ul>
               </div>
             </div>
