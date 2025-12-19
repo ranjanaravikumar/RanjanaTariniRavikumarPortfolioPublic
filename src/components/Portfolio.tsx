@@ -13,6 +13,9 @@ const Portfolio = () => {
     { icon: Mail, href: "mailto:ranjanaamutha@gmail.com", label: "Email" }
   ]
 
+const getBasePath = (path: string) => `/RanjanaTariniRavikumarPortfolioPublic${path}`
+
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
@@ -58,7 +61,7 @@ const Portfolio = () => {
                     className="bg-white/20 text-white hover:bg-white hover:text-black px-6 lg:px-8 py-3 text-base font-medium group w-full sm:w-auto border border-white/30"
                     asChild
                   >
-                    <a href="/about">
+                    <a href={getBasePath("/about")}>
                       About Me
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </a>
