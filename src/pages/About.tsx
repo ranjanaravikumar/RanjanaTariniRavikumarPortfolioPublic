@@ -86,6 +86,9 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Sentence Transformers</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">LangChain</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">JavaScript</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">RAG</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">NLP</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -105,9 +108,13 @@ const About = () => {
                 <p className="text-white/80 mb-4">Real-time YOLO-NAS model for fruit quality control. Optimized training pipeline from 12 hours to 13 minutes per epoch (55x speedup) using GPU acceleration. Automated dataset curation pipeline for 2,000 images across 6 defect classes.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">YOLO-NAS</span>
-                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">AWS (Lambda, EC2, DynamoDB)</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">AWS Lambda</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">AWS EC2</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">AWS DynamoDB</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">FastAPI</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Computer Vision</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">GPU Acceleration</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -131,6 +138,11 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">MongoDB</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Stripe</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">FastAPI</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Whisper</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">GPT-4</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">LLM Integration</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Payment Processing</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -155,6 +167,9 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Express</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Next.js</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">JWT</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">REST APIs</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Authentication</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">JavaScript</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -178,6 +193,8 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Deep Learning</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">GANs</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Attention Mechanisms</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">CNN</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -202,6 +219,8 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">XGBoost</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">LightGBM</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Bayesian Optimization</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Ensemble Learning</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">ML</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -225,6 +244,8 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">DenseNet121</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Transfer Learning</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Medical Imaging</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">CNN</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
@@ -248,6 +269,8 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">InceptionV3</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">CNN</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Transfer Learning</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Computer Vision</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20" asChild>
@@ -274,6 +297,7 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">PHP</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">MySQL</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">AJAX</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Full-Stack Web Development</span>
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
