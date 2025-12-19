@@ -4,14 +4,13 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/",
+  base: "/RanjanaTariniRavikumarPortfolioPublic/",  // ← Add this back!
   server: {
     host: "::",
     port: 8080,
   },
   plugins: [
     react(),
-    // removed componentTagger so there is no Lovable reference
   ],
   resolve: {
     alias: {
