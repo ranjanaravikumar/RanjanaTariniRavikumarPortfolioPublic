@@ -50,7 +50,7 @@ const About = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1eALGTf7f-pdVeN_5LK3XyOxhSH1nVm_7"
+                  href="https://drive.google.com/uc?export=download&id=1B-E9BtnUjTACgkaoEn0KaD-n0SjHi8Zx"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -61,7 +61,7 @@ const About = () => {
             </div>
             <div className="bg-white/10 rounded-lg p-4 border border-white/20">
               <iframe
-                src="https://drive.google.com/file/d/1eALGTf7f-pdVeN_5LK3XyOxhSH1nVm_7/preview"
+                src="https://drive.google.com/file/d/1B-E9BtnUjTACgkaoEn0KaD-n0SjHi8Zx/preview"
                 className="w-full h-96 rounded"
                 title="Resume"
               />
