@@ -2,6 +2,8 @@ import { useState } from "react"
 import { GlassCard, GlassCardContent } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, ExternalLink, Calendar, MapPin, Github, Eye, Camera, Music, BookOpen, Gamepad2 } from "lucide-react"
+import backgroundImage from "@/assets/background.jpg"
+
 
 const About = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null)
@@ -460,7 +462,7 @@ const About = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(/lovable-uploads/f5fcd797-d68f-48a0-bd59-83436c072b16.png)` }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
       </div>
@@ -500,7 +502,7 @@ const About = () => {
           {activeSection && (
             <div 
               className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(/lovable-uploads/f5fcd797-d68f-48a0-bd59-83436c072b16.png)` }}
+              style={{ backgroundImage: `url(${backgroundImage})` }}
             >
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               <GlassCard className="w-full max-w-4xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">

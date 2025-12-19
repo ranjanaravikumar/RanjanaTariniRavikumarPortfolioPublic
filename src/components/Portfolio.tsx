@@ -1,7 +1,9 @@
 import { GlassCard, GlassCardContent, GlassCardHeader, GlassCardTitle } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { Github, Linkedin, Mail, Phone, ArrowRight } from "lucide-react"
-import mountainBackground from "@/assets/mountain-background.jpg"
+import backgroundImage from "@/assets/background.jpg"
+import profilePic from "@/assets/Ranjana-Tarini-Ravikumar.jpg"
+
 
 const Portfolio = () => {
   const socialLinks = [
@@ -16,7 +18,7 @@ const Portfolio = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(/lovable-uploads/f5fcd797-d68f-48a0-bd59-83436c072b16.png)` }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
       </div>
@@ -32,7 +34,7 @@ const Portfolio = () => {
                 <div className="relative">
                   <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-white/30 shadow-xl transition-transform hover:scale-105 duration-300">
                     <img 
-                      src="/lovable-uploads/8ca4ae76-1437-4f5b-969b-e946c74fa961.png" 
+                      src={profilePic} 
                       alt="Ranjana Tarini Ravikumar"
                       className="w-full h-full object-cover"
                     />
