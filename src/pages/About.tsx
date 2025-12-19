@@ -7,7 +7,6 @@ import backgroundImage from "@/assets/background.jpg"
 
 
 const About = () => {
-  const getBasePath = (path: string) => `/RanjanaTariniRavikumarPortfolioPublic${path}`
   const [activeSection, setActiveSection] = useState<string | null>(null)
 
   const sections = [
@@ -534,7 +533,7 @@ const About = () => {
               className="hover:bg-white/20 hover:text-white border-white/20"
               asChild
             >
-              <a href={getBasePath("/")}>Back to Home</a>
+              <a href="/">Back to Home</a>
             </GlassButton>
           </div>
         </div>
