@@ -1,7 +1,11 @@
 import React, { useState } from "react"
 import { GlassCard, GlassCardContent } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
-import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, ExternalLink, Calendar, MapPin, Github, Eye, Camera, Music, BookOpen, Gamepad2 } from "lucide-react"
+import { 
+  X, User, FileText, Briefcase, Lightbulb, Award, Code, Download,
+  ExternalLink, Calendar, MapPin, Github, Eye, Camera, Scissors,
+  Users, Coffee
+} from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
 import wallEdited from "@/assets/walledited.jpg"      
@@ -100,37 +104,37 @@ const About = () => {
       title: "Capturing Everyday Joy",
       subtitle: "Photo diary",
       description:
-        "Treat social media like a personal photo diary, sharing happy moments and little wins to document growth, gratitude, and the people who matter.",
-      image: myself,
+        "Treat social media like a personal photo diary, saving happy moments, little wins, and snapshots with people who matter as a way to remember and reflect.",
+      image: myself, 
       accent: "linear-gradient(90deg,#22c55e,#a3e635)",
       icon: Camera,
     },
     {
-      title: "Slow Social & Close Circles",
+      title: "Social & Close Circles",
       subtitle: "People first",
       description:
-        "An ambivert who enjoys unhurried hangouts, late-night conversations, and spending time with a close circle of friends more than big crowds.",
-      image: joyPhoto,
+        "An ambivert who enjoys honest conversations, spontaneous plans, and spending time with people, and is always happy to start a conversation.",
+      image: joyPhoto, 
       accent: "linear-gradient(90deg,#6366f1,#a855f7)",
-      icon: BookOpen,
+      icon: Users,
     },
     {
       title: "Deep Work & Little Rituals",
       subtitle: "Focus mode",
       description:
-        "Loves long focus sessions with a can of energy drink nearby, getting immersed in building, debugging, and slowly improving things one intentional decision at a time.",
+        "Enjoys long focus sessions with a favorite coffee or energy drink nearby, getting deeply absorbed in building, debugging, and steadily refining things until they feel right.",
       image: deepWorkDrink,
       accent: "linear-gradient(90deg,#0ea5e9,#22d3ee)",
-      icon: Gamepad2,
+      icon: Coffee,
     },
     {
       title: "Crafting & Thoughtful Details",
       subtitle: "Handmade things",
       description:
-        "Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself.",
-      image: wallEdited,
+        "Enjoy creating handmade crafts and small personal projects, and care a lot about the thought, time, and effort behind something handcrafted—not just the final object.",
+      image: wallEdited, 
       accent: "linear-gradient(90deg,#f97316,#facc15)",
-      icon: Camera,
+      icon: Scissors,
     },
   ]
 
