@@ -4,14 +4,10 @@ import { GlassButton } from "@/components/ui/glass-button"
 import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, ExternalLink, Calendar, MapPin, Github, Eye, Camera, Music, BookOpen, Gamepad2 } from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
-import wallEdited from "@/assets/walledited.jpg"      // Slow Social & Close Circles
-import deepWorkDrink from "@/assets/drink-1.jpg"      // Deep Work & Little Rituals
-import joyPhoto from "@/assets/pic-2.jpg"             // Capturing Everyday Joy
-import craft1 from "@/assets/IMG_0103.jpg"
-import craft2 from "@/assets/IMG_0104.jpg"
-import craft3 from "@/assets/IMG_0105.jpg"
-import craft4 from "@/assets/IMG_0106.jpg"
-import craft5 from "@/assets/IMG_0107.jpg"
+import wallEdited from "@/assets/walledited.jpg"      
+import deepWorkDrink from "@/assets/drink-1.jpg"      
+import joyPhoto from "@/assets/pic-2.jpg"             
+import myself from "@/assets/me-2.jpeg"
 
 
 type FlashcardProps = {
@@ -99,21 +95,13 @@ const About = () => {
   const [currentInterest, setCurrentInterest] = useState(0)
 
   const interestCards = [
-    {
-      title: "Crafting & Thoughtful Details",
-      subtitle: "Handmade things",
-      description:
-        "Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself.",
-      image: craft1,
-      accent: "linear-gradient(90deg,#f97316,#facc15)",
-      icon: Camera,
-    },
+    
     {
       title: "Capturing Everyday Joy",
       subtitle: "Photo diary",
       description:
         "Treat social media like a personal photo diary, sharing happy moments and little wins to document growth, gratitude, and the people who matter.",
-      image: joyPhoto,
+      image: myself,
       accent: "linear-gradient(90deg,#22c55e,#a3e635)",
       icon: Camera,
     },
@@ -122,7 +110,7 @@ const About = () => {
       subtitle: "People first",
       description:
         "An ambivert who enjoys unhurried hangouts, late-night conversations, and spending time with a close circle of friends more than big crowds.",
-      image: wallEdited,
+      image: joyPhoto,
       accent: "linear-gradient(90deg,#6366f1,#a855f7)",
       icon: BookOpen,
     },
@@ -134,6 +122,15 @@ const About = () => {
       image: deepWorkDrink,
       accent: "linear-gradient(90deg,#0ea5e9,#22d3ee)",
       icon: Gamepad2,
+    },
+    {
+      title: "Crafting & Thoughtful Details",
+      subtitle: "Handmade things",
+      description:
+        "Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself.",
+      image: wallEdited,
+      accent: "linear-gradient(90deg,#f97316,#facc15)",
+      icon: Camera,
     },
   ]
 
@@ -592,7 +589,6 @@ const About = () => {
             </p>
           </div>
         )
-
 
 
       case 'certifications':
