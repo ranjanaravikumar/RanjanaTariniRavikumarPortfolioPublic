@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { GlassCard, GlassCardContent } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, ExternalLink, Calendar, MapPin, Github, Eye, Camera, Music, BookOpen, Gamepad2 } from "lucide-react"
@@ -20,77 +20,61 @@ type FlashcardProps = {
   description: string
   image: string
   accent: string
+  icon: React.ElementType
 }
 
-const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardProps) => {
-  const [flipped, setFlipped] = useState(false)
-
+const Flashcard = ({ title, subtitle, description, image, accent, icon: Icon }: FlashcardProps) => {
   return (
-    <div
-      className="relative min-w-[260px] md:min-w-[320px] h-56 snap-center cursor-pointer"
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
-      onClick={() => setFlipped((v) => !v)}  // tap on mobile
-    >
-      {/* 3D card */}
+    <div className="relative min-w-[260px] md:min-w-[320px] h-56 snap-center cursor-pointer group">
+      {/* image base */}
+      <img
+        src={image}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+      />
+
+      {/* blurred overlay on hover / tap */}
       <div
-        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/15
-                    bg-white/5 shadow-lg transition-transform duration-500
-                    [transform-style:preserve-3d]
-                    ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
+        className="absolute inset-0 rounded-2xl transition-all duration-300
+                   bg-black/40 group-hover:bg-black/70"
       >
-        {/* FRONT */}
-        <div className="absolute inset-0 [backface-visibility:hidden]">
-          <img
-            src={image}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-          <div
-            className="absolute left-0 top-0 h-1 w-full"
-            style={{ background: accent }}
-          />
-          <div className="relative h-full flex flex-col justify-between p-4">
-            <div>
-              <p className="text-[10px] uppercase tracking-wide text-white/70">
-                {subtitle}
-              </p>
-              <h3 className="mt-1 text-lg font-semibold text-white">
-                {title}
-              </h3>
-            </div>
-            <p className="text-xs text-white/80">
-              Tap or hover to see more.
+        <img
+          src={image}
+          alt={`${title} blurred`}
+          className="w-full h-full object-cover rounded-2xl opacity-0 group-hover:opacity-100 blur-sm scale-110 transition-all duration-300"
+        />
+      </div>
+
+      {/* accent bar */}
+      <div
+        className="absolute left-0 top-0 h-1 w-full rounded-t-2xl"
+        style={{ background: accent }}
+      />
+
+      {/* text content */}
+      <div className="relative z-10 h-full flex flex-col justify-between p-4">
+        <div className="flex items-center gap-2">
+          <Icon className="h-4 w-4 text-white/80" />
+          <div>
+            <p className="text-[10px] uppercase tracking-wide text-white/70">
+              {subtitle}
             </p>
+            <h3 className="mt-1 text-lg font-semibold text-white">
+              {title}
+            </h3>
           </div>
         </div>
 
-        {/* BACK – same picture, blurred */}
-        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          {/* blurred background */}
-          <img
-            src={image}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm"
-          />
-          <div className="absolute inset-0 bg-black/70" />
-
-          {/* text content */}
-          <div className="relative h-full flex flex-col justify-between p-4">
-            <div>
-              <p className="text-[10px] uppercase tracking-wide text-white/60">
-                {subtitle}
-              </p>
-              <h3 className="mt-1 text-lg font-semibold text-white">
-                {title}
-              </h3>
-            </div>
-            <p className="text-xs text-white/90 leading-relaxed">
-              {description}
-            </p>
-          </div>
-        </div>
+        {/* front: hint line; hover: full description */}
+        <p className="text-xs text-white/85 leading-relaxed transition-all duration-300
+                      line-clamp-1 group-hover:line-clamp-none">
+          <span className="group-hover:hidden">
+            Tap or hover to see more.
+          </span>
+          <span className="hidden group-hover:inline">
+            {description}
+          </span>
+        </p>
       </div>
     </div>
   )
@@ -517,7 +501,7 @@ const About = () => {
             <p className="text-white/70 text-sm">
               The little things that make up who I am.
             </p>
-            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+
             {/* HORIZONTAL FLASHCARD STRIP */}
             <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
               <Flashcard
@@ -526,6 +510,7 @@ const About = () => {
                 description="Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself."
                 image={craft1}
                 accent="linear-gradient(90deg,#f97316,#facc15)"
+                icon={Camera}
               />
               <Flashcard
                 title="Capturing Everyday Joy"
@@ -533,6 +518,7 @@ const About = () => {
                 description="Treat social media like a personal photo diary, sharing happy moments and little wins to document growth, gratitude, and the people who matter."
                 image={joyPhoto}
                 accent="linear-gradient(90deg,#22c55e,#a3e635)"
+                icon={Camera}
               />
               <Flashcard
                 title="Slow Social & Close Circles"
@@ -540,6 +526,7 @@ const About = () => {
                 description="An ambivert who enjoys unhurried hangouts, late-night conversations, and spending time with a close circle of friends more than big crowds."
                 image={wallEdited}
                 accent="linear-gradient(90deg,#6366f1,#a855f7)"
+                icon={BookOpen}
               />
               <Flashcard
                 title="Deep Work & Little Rituals"
@@ -547,12 +534,11 @@ const About = () => {
                 description="Loves long focus sessions with a can of energy drink nearby, getting immersed in building, debugging, and slowly improving things one intentional decision at a time."
                 image={deepWorkDrink}
                 accent="linear-gradient(90deg,#0ea5e9,#22d3ee)"
+                icon={Gamepad2}
               />
             </div>
           </div>
-        </div>
         )
-
 
       case 'certifications':
         return (
