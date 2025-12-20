@@ -38,13 +38,9 @@ const Flashcard = ({
       className="relative w-full sm:w-96 h-80 cursor-pointer"
       onClick={() => setFlipped((v) => !v)}
     >
-      <div
-        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl
-                    transition-transform duration-500 [transform-style:preserve-3d]
-                    ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
-      >
-        {/* FRONT – title + hint */}
-        <div className="absolute inset-0 [backface-visibility:hidden]">
+      {/* FRONT */}
+      {!flipped && (
+        <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
           <img
             src={image}
             alt={title}
@@ -70,9 +66,11 @@ const Flashcard = ({
             <p className="text-xs text-white/70 italic">Click to reveal</p>
           </div>
         </div>
+      )}
 
-        {/* BACK – description only */}
-        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+      {/* BACK */}
+      {flipped && (
+        <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
           <img
             src={image}
             alt={title}
@@ -88,12 +86,15 @@ const Flashcard = ({
                 {title}
               </h3>
             </div>
-            <p className="text-sm text-white/90 leading-relaxed">
-              {description}
-            </p>
+            <div>
+              <p className="text-sm text-white/90 leading-relaxed">
+                {description}
+              </p>
+              <p className="text-xs text-white/60 italic mt-3">Click to go back</p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
