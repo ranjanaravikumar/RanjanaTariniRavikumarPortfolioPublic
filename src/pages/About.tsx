@@ -30,11 +30,13 @@ const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardPro
       className="relative min-w-[260px] md:min-w-[320px] h-56 snap-center cursor-pointer"
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
-      onClick={() => setFlipped((v) => !v)} // tap on mobile
+      onClick={() => setFlipped((v) => !v)}  // tap on mobile
     >
+      {/* 3D card */}
       <div
-        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/15 bg-white/5
-                    transition-transform duration-500 [transform-style:preserve-3d]
+        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/15
+                    bg-white/5 shadow-lg transition-transform duration-500
+                    [transform-style:preserve-3d]
                     ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
       >
         {/* FRONT */}
@@ -58,21 +60,23 @@ const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardPro
                 {title}
               </h3>
             </div>
-            {/* one-line teaser only */}
             <p className="text-xs text-white/80">
               Tap or hover to see more.
             </p>
           </div>
         </div>
 
-        {/* BACK */}
+        {/* BACK – same picture, blurred */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          {/* blurred background */}
           <img
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover scale-105"
+            className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm"
           />
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-black/70" />
+
+          {/* text content */}
           <div className="relative h-full flex flex-col justify-between p-4">
             <div>
               <p className="text-[10px] uppercase tracking-wide text-white/60">
@@ -82,7 +86,7 @@ const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardPro
                 {title}
               </h3>
             </div>
-            <p className="text-xs text-white/85 leading-relaxed">
+            <p className="text-xs text-white/90 leading-relaxed">
               {description}
             </p>
           </div>
