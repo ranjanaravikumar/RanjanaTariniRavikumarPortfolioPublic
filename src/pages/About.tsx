@@ -35,63 +35,60 @@ const Flashcard = ({
 
   return (
     <div
-      className="relative w-[280px] sm:w-[340px] h-64 cursor-pointer"
+      className="relative w-full sm:w-96 h-80 cursor-pointer"
       onClick={() => setFlipped((v) => !v)}
     >
       <div
-        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-xl
+        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl
                     transition-transform duration-500 [transform-style:preserve-3d]
                     ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
       >
-        {/* FRONT */}
+        {/* FRONT – title + hint */}
         <div className="absolute inset-0 [backface-visibility:hidden]">
           <img
             src={image}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent" />
           <div
             className="absolute left-0 top-0 h-1 w-full"
             style={{ background: accent }}
           />
-          <div className="relative h-full flex flex-col justify-between p-4">
-            <div className="flex items-center gap-2">
-              <Icon className="h-4 w-4 text-white/80" />
+          <div className="relative h-full flex flex-col justify-between p-6">
+            <div className="flex items-center gap-3">
+              <Icon className="h-5 w-5 text-white/90" />
               <div>
-                <p className="text-[10px] uppercase tracking-wide text-white/70">
+                <p className="text-[11px] uppercase tracking-wider text-white/70">
                   {subtitle}
                 </p>
-                <h3 className="mt-1 text-lg font-semibold text-white">
+                <h3 className="mt-2 text-xl font-bold text-white leading-tight">
                   {title}
                 </h3>
               </div>
             </div>
-            <p className="text-xs text-white/80">Tap or click to flip.</p>
+            <p className="text-xs text-white/70 italic">Click to reveal</p>
           </div>
         </div>
 
-        {/* BACK (same image, blurred) */}
+        {/* BACK – description only */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <img
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm"
+            className="absolute inset-0 w-full h-full object-cover scale-125 blur-lg"
           />
-          <div className="absolute inset-0 bg-black/75" />
-          <div className="relative h-full flex flex-col justify-between p-4">
-            <div className="flex items-center gap-2">
-              <Icon className="h-4 w-4 text-white/80" />
-              <div>
-                <p className="text-[10px] uppercase tracking-wide text-white/60">
-                  {subtitle}
-                </p>
-                <h3 className="mt-1 text-lg font-semibold text-white">
-                  {title}
-                </h3>
-              </div>
+          <div className="absolute inset-0 bg-black/80" />
+          <div className="relative h-full flex flex-col justify-between p-6">
+            <div>
+              <p className="text-[11px] uppercase tracking-wider text-white/60">
+                {subtitle}
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-white leading-tight">
+                {title}
+              </h3>
             </div>
-            <p className="text-xs text-white/90 leading-relaxed">
+            <p className="text-sm text-white/90 leading-relaxed">
               {description}
             </p>
           </div>
@@ -558,7 +555,7 @@ const About = () => {
       case 'interests':
         return (
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-white">Beyond the Code</h2>
+            <h2 className="text-3xl font-bold text-white">Personal Interests</h2>
             <p className="text-white/70 text-sm">
               The little things that make up who I am.
             </p>
