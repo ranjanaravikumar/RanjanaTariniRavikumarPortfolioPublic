@@ -5,13 +5,64 @@ import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, Externa
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
 import wallEdited from "@/assets/walledited.jpg"      // Slow Social & Close Circles
-import deepWorkDrink from "@/assets/drink-1.jpeg"      // Deep Work & Little Rituals
-import joyPhoto from "@/assets/pic-2.jpeg"             // Capturing Everyday Joy
+import deepWorkDrink from "@/assets/drink-1.jpg"      // Deep Work & Little Rituals
+import joyPhoto from "@/assets/pic-2.jpg"             // Capturing Everyday Joy
 import craft1 from "@/assets/IMG_0103.jpg"
 import craft2 from "@/assets/IMG_0104.jpg"
 import craft3 from "@/assets/IMG_0105.jpg"
 import craft4 from "@/assets/IMG_0106.jpg"
 import craft5 from "@/assets/IMG_0107.jpg"
+
+
+type FlashcardProps = {
+  title: string
+  subtitle: string
+  description: string
+  image: string
+  accent: string
+}
+
+const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardProps) => (
+  <div
+    className="group relative min-w-[260px] md:min-w-[320px] h-56 rounded-2xl overflow-hidden snap-center
+               bg-white/5 border border-white/15 cursor-pointer
+               transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40"
+  >
+    {/* background photo */}
+    <img
+      src={image}
+      alt={title}
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+    {/* gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+
+    {/* accent bar */}
+    <div
+      className="absolute left-0 top-0 h-1 w-full"
+      style={{ background: accent }}
+    />
+
+    {/* content */}
+    <div className="relative h-full flex flex-col justify-between p-4">
+      <div>
+        <p className="text-[10px] uppercase tracking-wide text-white/70">
+          {subtitle}
+        </p>
+        <h3 className="mt-1 text-lg font-semibold text-white">
+          {title}
+        </h3>
+      </div>
+      <p
+        className="text-xs text-white/85 leading-relaxed line-clamp-3 md:line-clamp-4
+                   transition-all duration-300 group-hover:line-clamp-none"
+      >
+        {description}
+      </p>
+    </div>
+  </div>
+)
+
 
 
 const About = () => {
@@ -425,89 +476,44 @@ const About = () => {
             </div>
           </div>
         )
+    
       case 'interests':
         return (
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h2 className="text-3xl font-bold text-white">Beyond the Code</h2>
-            <p className="text-white/70">
+            <p className="text-white/70 text-sm">
               The little things that make up who I am.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              {/* Crafting & Thoughtful Details */}
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
-                <img
-                  src={craft1}
-                  alt="Handmade birthday card"
-                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Crafting & Thoughtful Details
-                  </h3>
-                  <p className="text-white/80 mt-2 text-sm">
-                    Enjoy creating handmade crafts and small personal projects, and value
-                    the effort and intention behind thoughtful, handcrafted gifts more
-                    than the object itself.
-                  </p>
-                </div>
-              </div>
-
-              {/* Capturing Everyday Joy */}
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
-                <img
-                  src={joyPhoto}
-                  alt="City sunset and sky"
-                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Capturing Everyday Joy
-                  </h3>
-                  <p className="text-white/80 mt-2 text-sm">
-                    Treat social media like a personal photo diary, sharing happy
-                    moments and little wins to document growth, gratitude, and the
-                    people who matter.
-                  </p>
-                </div>
-              </div>
-
-              {/* Slow Social & Close Circles */}
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
-                <img
-                  src={wallEdited}
-                  alt="Photo wall with friends and memories"
-                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Slow Social & Close Circles
-                  </h3>
-                  <p className="text-white/80 mt-2 text-sm">
-                    An ambivert who enjoys unhurried hangouts, late-night conversations,
-                    and spending time with a close circle of friends more than big crowds.
-                  </p>
-                </div>
-              </div>
-
-              {/* Deep Work & Little Rituals */}
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
-                <img
-                  src={deepWorkDrink}
-                  alt="Energy drink on desk during work"
-                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Deep Work & Little Rituals
-                  </h3>
-                  <p className="text-white/80 mt-2 text-sm">
-                    Loves long focus sessions with a can of energy drink nearby, getting
-                    immersed in building, debugging, and slowly improving things one
-                    intentional decision at a time.
-                  </p>
-                </div>
-              </div>
+            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+              <Flashcard
+                title="Crafting & Thoughtful Details"
+                subtitle="Handmade things"
+                description="Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself."
+                image={craft1}
+                accent="linear-gradient(90deg,#f97316,#facc15)"
+              />
+              <Flashcard
+                title="Capturing Everyday Joy"
+                subtitle="Photo diary"
+                description="Treat social media like a personal photo diary, sharing happy moments and little wins to document growth, gratitude, and the people who matter."
+                image={joyPhoto}
+                accent="linear-gradient(90deg,#22c55e,#a3e635)"
+              />
+              <Flashcard
+                title="Slow Social & Close Circles"
+                subtitle="People first"
+                description="An ambivert who enjoys unhurried hangouts, late-night conversations, and spending time with a close circle of friends more than big crowds."
+                image={wallEdited}
+                accent="linear-gradient(90deg,#6366f1,#a855f7)"
+              />
+              <Flashcard
+                title="Deep Work & Little Rituals"
+                subtitle="Focus mode"
+                description="Loves long focus sessions with a can of energy drink nearby, getting immersed in building, debugging, and slowly improving things one intentional decision at a time."
+                image={deepWorkDrink}
+                accent="linear-gradient(90deg,#0ea5e9,#22d3ee)"
+              />
             </div>
           </div>
         )
