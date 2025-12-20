@@ -4,6 +4,14 @@ import { GlassButton } from "@/components/ui/glass-button"
 import { X, User, FileText, Briefcase, Lightbulb, Award, Code, Download, ExternalLink, Calendar, MapPin, Github, Eye, Camera, Music, BookOpen, Gamepad2 } from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
+import wallEdited from "@/assets/walledited.jpg"      // Slow Social & Close Circles
+import deepWorkDrink from "@/assets/drink-1.jpeg"      // Deep Work & Little Rituals
+import joyPhoto from "@/assets/pic-2.jpeg"             // Capturing Everyday Joy
+import craft1 from "@/assets/IMG_0103.jpg"
+import craft2 from "@/assets/IMG_0104.jpg"
+import craft3 from "@/assets/IMG_0105.jpg"
+import craft4 from "@/assets/IMG_0106.jpg"
+import craft5 from "@/assets/IMG_0107.jpg"
 
 
 const About = () => {
@@ -420,58 +428,91 @@ const About = () => {
       case 'interests':
         return (
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-white">Interests</h2>
+            <h2 className="text-3xl font-bold text-white">Beyond the Code</h2>
+            <p className="text-white/70">
+              The little things that make up who I am.
+            </p>
+
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex items-center gap-3 mb-3">
-                  <Code className="h-6 w-6 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Technology & Innovation</h3>
+              {/* Crafting & Thoughtful Details */}
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
+                <img
+                  src={craft1}
+                  alt="Handmade birthday card"
+                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
+                />
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Crafting & Thoughtful Details
+                  </h3>
+                  <p className="text-white/80 mt-2 text-sm">
+                    Enjoy creating handmade crafts and small personal projects, and value
+                    the effort and intention behind thoughtful, handcrafted gifts more
+                    than the object itself.
+                  </p>
                 </div>
-                <p className="text-white/80">Passionate about emerging technologies, AI, and software development trends.</p>
               </div>
 
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex items-center gap-3 mb-3">
-                  <Lightbulb className="h-6 w-6 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Design & Creativity</h3>
+              {/* Capturing Everyday Joy */}
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
+                <img
+                  src={joyPhoto}
+                  alt="City sunset and sky"
+                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
+                />
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Capturing Everyday Joy
+                  </h3>
+                  <p className="text-white/80 mt-2 text-sm">
+                    Treat social media like a personal photo diary, sharing happy
+                    moments and little wins to document growth, gratitude, and the
+                    people who matter.
+                  </p>
                 </div>
-                <p className="text-white/80">Enjoy creating user interfaces and exploring design principles and aesthetics.</p>
               </div>
 
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex items-center gap-3 mb-3">
-                  <Camera className="h-6 w-6 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Photography</h3>
+              {/* Slow Social & Close Circles */}
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
+                <img
+                  src={wallEdited}
+                  alt="Photo wall with friends and memories"
+                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
+                />
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Slow Social & Close Circles
+                  </h3>
+                  <p className="text-white/80 mt-2 text-sm">
+                    An ambivert who enjoys unhurried hangouts, late-night conversations,
+                    and spending time with a close circle of friends more than big crowds.
+                  </p>
                 </div>
-                <p className="text-white/80">Capturing moments and exploring the world through different perspectives.</p>
               </div>
 
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex items-center gap-3 mb-3">
-                  <Music className="h-6 w-6 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Music</h3>
+              {/* Deep Work & Little Rituals */}
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20 flex flex-col md:flex-row gap-4">
+                <img
+                  src={deepWorkDrink}
+                  alt="Energy drink on desk during work"
+                  className="w-full md:w-40 h-32 md:h-40 object-cover rounded-lg shadow-md"
+                />
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Deep Work & Little Rituals
+                  </h3>
+                  <p className="text-white/80 mt-2 text-sm">
+                    Loves long focus sessions with a can of energy drink nearby, getting
+                    immersed in building, debugging, and slowly improving things one
+                    intentional decision at a time.
+                  </p>
                 </div>
-                <p className="text-white/80">Listening to various genres and exploring the intersection of technology and music.</p>
-              </div>
-
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex items-center gap-3 mb-3">
-                  <BookOpen className="h-6 w-6 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Reading</h3>
-                </div>
-                <p className="text-white/80">Exploring books on technology, personal development, and fiction.</p>
-              </div>
-
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex items-center gap-3 mb-3">
-                  <Gamepad2 className="h-6 w-6 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Gaming</h3>
-                </div>
-                <p className="text-white/80">Playing strategic and creative games that challenge problem-solving skills.</p>
               </div>
             </div>
           </div>
         )
+
+
       case 'certifications':
         return (
           <div className="space-y-6">
