@@ -59,10 +59,10 @@ const About = () => {
                 </a>
               </GlassButton>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+            <div className="bg-white/10 rounded-lg p-6 border border-white/20 max-w-4xl mx-auto">
               <iframe
                 src="https://drive.google.com/file/d/1B-E9BtnUjTACgkaoEn0KaD-n0SjHi8Zx/preview"
-                className="w-full h-96 rounded"
+                className="w-full h-[650px] md:h-[750px] rounded-xl"
                 title="Resume"
               />
             </div>
@@ -327,7 +327,7 @@ const About = () => {
                   <div className="text-right text-white/70 text-sm">
                     <div className="flex items-center gap-1 mb-1">
                       <Calendar className="h-4 w-4" />
-                      April 2025 – August 2025
+                      Apr 2025 – Aug 2025
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
