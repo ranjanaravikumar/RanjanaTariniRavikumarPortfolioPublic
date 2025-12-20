@@ -26,24 +26,16 @@ const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardPro
   <div
     className="group relative min-w-[260px] md:min-w-[320px] h-56 rounded-2xl overflow-hidden snap-center
                bg-white/5 border border-white/15 cursor-pointer
-               transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40"
-  >
-    {/* background photo */}
+               transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40">
     <img
       src={image}
       alt={title}
-      className="absolute inset-0 w-full h-full object-cover"
-    />
-    {/* gradient overlay */}
+      className="absolute inset-0 w-full h-full object-cover"/>
     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-
-    {/* accent bar */}
+   
     <div
       className="absolute left-0 top-0 h-1 w-full"
-      style={{ background: accent }}
-    />
-
-    {/* content */}
+      style={{ background: accent }}/>
     <div className="relative h-full flex flex-col justify-between p-4">
       <div>
         <p className="text-[10px] uppercase tracking-wide text-white/70">
@@ -53,10 +45,7 @@ const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardPro
           {title}
         </h3>
       </div>
-      <p
-        className="text-xs text-white/85 leading-relaxed line-clamp-3 md:line-clamp-4
-                   transition-all duration-300 group-hover:line-clamp-none"
-      >
+      <p className="text-xs text-white/85 leading-relaxed line-clamp-3 md:line-clamp-4 transition-all duration-300 group-hover:line-clamp-none">
         {description}
       </p>
     </div>
@@ -485,6 +474,7 @@ const About = () => {
               The little things that make up who I am.
             </p>
 
+            {/* HORIZONTAL FLASHCARD STRIP */}
             <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
               <Flashcard
                 title="Crafting & Thoughtful Details"
