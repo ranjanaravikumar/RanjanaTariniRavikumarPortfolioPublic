@@ -31,70 +31,63 @@ const Flashcard = ({
   accent,
   icon: Icon,
 }: FlashcardProps) => {
-  const [flipped, setFlipped] = useState(false)
+  const [showDescription, setShowDescription] = useState(false)
 
   return (
     <div
-      className="relative w-full sm:w-96 h-80 cursor-pointer"
-      onClick={() => setFlipped((v) => !v)}
+      className="relative w-full h-96 cursor-pointer"
+      onMouseEnter={() => setShowDescription(true)}
+      onMouseLeave={() => setShowDescription(false)}
+      onClick={() => setShowDescription((v) => !v)}
     >
-      {/* FRONT */}
-      {!flipped && (
-        <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
-          <img
-            src={image}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent" />
-          <div
-            className="absolute left-0 top-0 h-1 w-full"
-            style={{ background: accent }}
-          />
-          <div className="relative h-full flex flex-col justify-between p-6">
-            <div className="flex items-center gap-3">
-              <Icon className="h-5 w-5 text-white/90" />
-              <div>
-                <p className="text-[11px] uppercase tracking-wider text-white/70">
-                  {subtitle}
-                </p>
-                <h3 className="mt-2 text-xl font-bold text-white leading-tight">
-                  {title}
-                </h3>
-              </div>
-            </div>
-            <p className="text-xs text-white/70 italic">Click to reveal</p>
-          </div>
-        </div>
-      )}
+      <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+        {/* Image fills everything */}
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-      {/* BACK */}
-      {flipped && (
-        <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
-          <img
-            src={image}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover scale-125 blur-lg"
-          />
-          <div className="absolute inset-0 bg-black/80" />
-          <div className="relative h-full flex flex-col justify-between p-6">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-white/60">
+        {/* Overlay blur on hover/click */}
+        {showDescription && (
+          <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+        )}
+
+        {/* Accent bar */}
+        <div
+          className="absolute left-0 top-0 h-1 w-full"
+          style={{ background: accent }}
+        />
+
+        {/* Content always visible, but text changes on hover */}
+        <div className="relative h-full flex flex-col justify-between p-5">
+          {/* Top: subtitle + title (always visible) */}
+          <div className="flex items-center gap-2">
+            <Icon className="h-5 w-5 text-white/90 flex-shrink-0" />
+            <div className="min-w-0">
+              <p className="text-[10px] uppercase tracking-wider text-white/70 truncate">
                 {subtitle}
               </p>
-              <h3 className="mt-2 text-xl font-bold text-white leading-tight">
+              <h3 className="text-lg font-bold text-white leading-tight">
                 {title}
               </h3>
             </div>
-            <div>
-              <p className="text-sm text-white/90 leading-relaxed">
+          </div>
+
+          {/* Bottom: description or hint */}
+          <div>
+            {!showDescription ? (
+              <p className="text-xs text-white/70 italic">
+                Hover or tap to see more
+              </p>
+            ) : (
+              <p className="text-sm text-white/95 leading-relaxed">
                 {description}
               </p>
-              <p className="text-xs text-white/60 italic mt-3">Click to go back</p>
-            </div>
+            )}
           </div>
         </div>
-      )}
+      </div>
     </div>
   )
 }
@@ -556,15 +549,16 @@ const About = () => {
       case 'interests':
         return (
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-white">Personal Interests</h2>
+            <h2 className="text-3xl font-bold text-white">On the Personal Side</h2>
             <p className="text-white/70 text-sm">
-              The little things that make up who I am.
+              The interests and passions that define me.
             </p>
 
-            <div className="flex items-center gap-4">
+            {/* Wider layout for bigger card */}
+            <div className="flex items-center justify-center gap-6 px-2">
               {/* Prev button */}
               <button
-                className="h-10 w-10 rounded-full border border-white/30 text-white/80 flex items-center justify-center hover:bg-white/15 transition"
+                className="h-10 w-10 rounded-full border border-white/30 text-white/80 flex items-center justify-center hover:bg-white/15 transition flex-shrink-0"
                 onClick={() =>
                   setCurrentInterest((prev) =>
                     prev === 0 ? interestCards.length - 1 : prev - 1
@@ -574,14 +568,14 @@ const About = () => {
                 &lt;
               </button>
 
-              {/* Single centered flashcard */}
-              <div className="flex-1 flex justify-center">
+              {/* Centered flashcard – takes up most space */}
+              <div className="flex-1 max-w-2xl flex justify-center">
                 <Flashcard {...interestCards[currentInterest]} />
               </div>
 
               {/* Next button */}
               <button
-                className="h-10 w-10 rounded-full border border-white/30 text-white/80 flex items-center justify-center hover:bg-white/15 transition"
+                className="h-10 w-10 rounded-full border border-white/30 text-white/80 flex items-center justify-center hover:bg-white/15 transition flex-shrink-0"
                 onClick={() =>
                   setCurrentInterest((prev) =>
                     prev === interestCards.length - 1 ? 0 : prev + 1
@@ -592,12 +586,13 @@ const About = () => {
               </button>
             </div>
 
-            {/* small indicator like 1 / 4 */}
+            {/* Indicator */}
             <p className="text-center text-xs text-white/60">
               {currentInterest + 1} / {interestCards.length}
             </p>
           </div>
         )
+
 
 
       case 'certifications':
