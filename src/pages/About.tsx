@@ -23,58 +23,79 @@ type FlashcardProps = {
   icon: React.ElementType
 }
 
-const Flashcard = ({ title, subtitle, description, image, accent, icon: Icon }: FlashcardProps) => {
+const Flashcard = ({
+  title,
+  subtitle,
+  description,
+  image,
+  accent,
+  icon: Icon,
+}: FlashcardProps) => {
+  const [flipped, setFlipped] = useState(false)
+
   return (
-    <div className="relative min-w-[260px] md:min-w-[320px] h-56 snap-center cursor-pointer group">
-      {/* image base */}
-      <img
-        src={image}
-        alt={title}
-        className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-      />
-
-      {/* blurred overlay on hover / tap */}
+    <div
+      className="relative w-[280px] sm:w-[340px] h-64 cursor-pointer"
+      onClick={() => setFlipped((v) => !v)}
+    >
       <div
-        className="absolute inset-0 rounded-2xl transition-all duration-300
-                   bg-black/40 group-hover:bg-black/70"
+        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/20 shadow-xl
+                    transition-transform duration-500 [transform-style:preserve-3d]
+                    ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
       >
-        <img
-          src={image}
-          alt={`${title} blurred`}
-          className="w-full h-full object-cover rounded-2xl opacity-0 group-hover:opacity-100 blur-sm scale-110 transition-all duration-300"
-        />
-      </div>
-
-      {/* accent bar */}
-      <div
-        className="absolute left-0 top-0 h-1 w-full rounded-t-2xl"
-        style={{ background: accent }}
-      />
-
-      {/* text content */}
-      <div className="relative z-10 h-full flex flex-col justify-between p-4">
-        <div className="flex items-center gap-2">
-          <Icon className="h-4 w-4 text-white/80" />
-          <div>
-            <p className="text-[10px] uppercase tracking-wide text-white/70">
-              {subtitle}
-            </p>
-            <h3 className="mt-1 text-lg font-semibold text-white">
-              {title}
-            </h3>
+        {/* FRONT */}
+        <div className="absolute inset-0 [backface-visibility:hidden]">
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div
+            className="absolute left-0 top-0 h-1 w-full"
+            style={{ background: accent }}
+          />
+          <div className="relative h-full flex flex-col justify-between p-4">
+            <div className="flex items-center gap-2">
+              <Icon className="h-4 w-4 text-white/80" />
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-white/70">
+                  {subtitle}
+                </p>
+                <h3 className="mt-1 text-lg font-semibold text-white">
+                  {title}
+                </h3>
+              </div>
+            </div>
+            <p className="text-xs text-white/80">Tap or click to flip.</p>
           </div>
         </div>
 
-        {/* front: hint line; hover: full description */}
-        <p className="text-xs text-white/85 leading-relaxed transition-all duration-300
-                      line-clamp-1 group-hover:line-clamp-none">
-          <span className="group-hover:hidden">
-            Tap or hover to see more.
-          </span>
-          <span className="hidden group-hover:inline">
-            {description}
-          </span>
-        </p>
+        {/* BACK (same image, blurred) */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm"
+          />
+          <div className="absolute inset-0 bg-black/75" />
+          <div className="relative h-full flex flex-col justify-between p-4">
+            <div className="flex items-center gap-2">
+              <Icon className="h-4 w-4 text-white/80" />
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-white/60">
+                  {subtitle}
+                </p>
+                <h3 className="mt-1 text-lg font-semibold text-white">
+                  {title}
+                </h3>
+              </div>
+            </div>
+            <p className="text-xs text-white/90 leading-relaxed">
+              {description}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -84,6 +105,46 @@ const Flashcard = ({ title, subtitle, description, image, accent, icon: Icon }: 
 
 const About = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [currentInterest, setCurrentInterest] = useState(0)
+
+  const interestCards = [
+    {
+      title: "Crafting & Thoughtful Details",
+      subtitle: "Handmade things",
+      description:
+        "Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself.",
+      image: craft1,
+      accent: "linear-gradient(90deg,#f97316,#facc15)",
+      icon: Camera,
+    },
+    {
+      title: "Capturing Everyday Joy",
+      subtitle: "Photo diary",
+      description:
+        "Treat social media like a personal photo diary, sharing happy moments and little wins to document growth, gratitude, and the people who matter.",
+      image: joyPhoto,
+      accent: "linear-gradient(90deg,#22c55e,#a3e635)",
+      icon: Camera,
+    },
+    {
+      title: "Slow Social & Close Circles",
+      subtitle: "People first",
+      description:
+        "An ambivert who enjoys unhurried hangouts, late-night conversations, and spending time with a close circle of friends more than big crowds.",
+      image: wallEdited,
+      accent: "linear-gradient(90deg,#6366f1,#a855f7)",
+      icon: BookOpen,
+    },
+    {
+      title: "Deep Work & Little Rituals",
+      subtitle: "Focus mode",
+      description:
+        "Loves long focus sessions with a can of energy drink nearby, getting immersed in building, debugging, and slowly improving things one intentional decision at a time.",
+      image: deepWorkDrink,
+      accent: "linear-gradient(90deg,#0ea5e9,#22d3ee)",
+      icon: Gamepad2,
+    },
+  ]
 
   const sections = [
     { id: 'intro', label: 'Intro', icon: User },
@@ -496,49 +557,50 @@ const About = () => {
     
       case 'interests':
         return (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Beyond the Code</h2>
             <p className="text-white/70 text-sm">
               The little things that make up who I am.
             </p>
 
-            {/* HORIZONTAL FLASHCARD STRIP */}
-            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
-              <Flashcard
-                title="Crafting & Thoughtful Details"
-                subtitle="Handmade things"
-                description="Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself."
-                image={craft1}
-                accent="linear-gradient(90deg,#f97316,#facc15)"
-                icon={Camera}
-              />
-              <Flashcard
-                title="Capturing Everyday Joy"
-                subtitle="Photo diary"
-                description="Treat social media like a personal photo diary, sharing happy moments and little wins to document growth, gratitude, and the people who matter."
-                image={joyPhoto}
-                accent="linear-gradient(90deg,#22c55e,#a3e635)"
-                icon={Camera}
-              />
-              <Flashcard
-                title="Slow Social & Close Circles"
-                subtitle="People first"
-                description="An ambivert who enjoys unhurried hangouts, late-night conversations, and spending time with a close circle of friends more than big crowds."
-                image={wallEdited}
-                accent="linear-gradient(90deg,#6366f1,#a855f7)"
-                icon={BookOpen}
-              />
-              <Flashcard
-                title="Deep Work & Little Rituals"
-                subtitle="Focus mode"
-                description="Loves long focus sessions with a can of energy drink nearby, getting immersed in building, debugging, and slowly improving things one intentional decision at a time."
-                image={deepWorkDrink}
-                accent="linear-gradient(90deg,#0ea5e9,#22d3ee)"
-                icon={Gamepad2}
-              />
+            <div className="flex items-center gap-4">
+              {/* Prev button */}
+              <button
+                className="h-10 w-10 rounded-full border border-white/30 text-white/80 flex items-center justify-center hover:bg-white/15 transition"
+                onClick={() =>
+                  setCurrentInterest((prev) =>
+                    prev === 0 ? interestCards.length - 1 : prev - 1
+                  )
+                }
+              >
+                &lt;
+              </button>
+
+              {/* Single centered flashcard */}
+              <div className="flex-1 flex justify-center">
+                <Flashcard {...interestCards[currentInterest]} />
+              </div>
+
+              {/* Next button */}
+              <button
+                className="h-10 w-10 rounded-full border border-white/30 text-white/80 flex items-center justify-center hover:bg-white/15 transition"
+                onClick={() =>
+                  setCurrentInterest((prev) =>
+                    prev === interestCards.length - 1 ? 0 : prev + 1
+                  )
+                }
+              >
+                &gt;
+              </button>
             </div>
+
+            {/* small indicator like 1 / 4 */}
+            <p className="text-center text-xs text-white/60">
+              {currentInterest + 1} / {interestCards.length}
+            </p>
           </div>
         )
+
 
       case 'certifications':
         return (
