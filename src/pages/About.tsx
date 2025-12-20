@@ -22,35 +22,75 @@ type FlashcardProps = {
   accent: string
 }
 
-const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardProps) => (
-  <div
-    className="group relative min-w-[260px] md:min-w-[320px] h-56 rounded-2xl overflow-hidden snap-center
-               bg-white/5 border border-white/15 cursor-pointer
-               transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40">
-    <img
-      src={image}
-      alt={title}
-      className="absolute inset-0 w-full h-full object-cover"/>
-    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-   
+const Flashcard = ({ title, subtitle, description, image, accent }: FlashcardProps) => {
+  const [flipped, setFlipped] = useState(false)
+
+  return (
     <div
-      className="absolute left-0 top-0 h-1 w-full"
-      style={{ background: accent }}/>
-    <div className="relative h-full flex flex-col justify-between p-4">
-      <div>
-        <p className="text-[10px] uppercase tracking-wide text-white/70">
-          {subtitle}
-        </p>
-        <h3 className="mt-1 text-lg font-semibold text-white">
-          {title}
-        </h3>
+      className="relative min-w-[260px] md:min-w-[320px] h-56 snap-center cursor-pointer"
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+      onClick={() => setFlipped((v) => !v)} // tap on mobile
+    >
+      <div
+        className={`relative h-full w-full rounded-2xl overflow-hidden border border-white/15 bg-white/5
+                    transition-transform duration-500 [transform-style:preserve-3d]
+                    ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
+      >
+        {/* FRONT */}
+        <div className="absolute inset-0 [backface-visibility:hidden]">
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div
+            className="absolute left-0 top-0 h-1 w-full"
+            style={{ background: accent }}
+          />
+          <div className="relative h-full flex flex-col justify-between p-4">
+            <div>
+              <p className="text-[10px] uppercase tracking-wide text-white/70">
+                {subtitle}
+              </p>
+              <h3 className="mt-1 text-lg font-semibold text-white">
+                {title}
+              </h3>
+            </div>
+            {/* one-line teaser only */}
+            <p className="text-xs text-white/80">
+              Tap or hover to see more.
+            </p>
+          </div>
+        </div>
+
+        {/* BACK */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover scale-105"
+          />
+          <div className="absolute inset-0 bg-black/75" />
+          <div className="relative h-full flex flex-col justify-between p-4">
+            <div>
+              <p className="text-[10px] uppercase tracking-wide text-white/60">
+                {subtitle}
+              </p>
+              <h3 className="mt-1 text-lg font-semibold text-white">
+                {title}
+              </h3>
+            </div>
+            <p className="text-xs text-white/85 leading-relaxed">
+              {description}
+            </p>
+          </div>
+        </div>
       </div>
-      <p className="text-xs text-white/85 leading-relaxed line-clamp-3 md:line-clamp-4 transition-all duration-300 group-hover:line-clamp-none">
-        {description}
-      </p>
     </div>
-  </div>
-)
+  )
+}
 
 
 
@@ -473,7 +513,7 @@ const About = () => {
             <p className="text-white/70 text-sm">
               The little things that make up who I am.
             </p>
-
+            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
             {/* HORIZONTAL FLASHCARD STRIP */}
             <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
               <Flashcard
@@ -506,6 +546,7 @@ const About = () => {
               />
             </div>
           </div>
+        </div>
         )
 
 
