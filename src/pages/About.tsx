@@ -864,9 +864,9 @@ const About = () => {
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Ranjana Tarini Ravikumar
                 </h1>
-                 <p className="text-white/70 text-xs sm:text-sm md:text-base max-w-4xl mx-auto">
+                 <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
                   I'm a current graduate student at Arizona State University (ASU), pursuing my Master's degree with an expected graduation in May 2026.</p>
-                 <p>
+                 <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
                   I'm passionate about building intelligent applications that solve real-world problems through AI and machine learning. 
                   I'm actively looking for full-time roles in software development, AI integration, and data science where I can contribute to meaningful projects while continuing to grow my expertise in RAG systems, LLM applications, and scalable backend architecture.
                 </p>
@@ -929,7 +929,7 @@ const About = () => {
           </div>
         </div>
         {/* Bottom contact bar */}
-        <footer className="w-full border-t border-white/10 bg-black/40 backdrop-blur-md">
+        <footer className="w-full border-t border-white/20 bg-black/15 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             
             {/* Left: label */}
