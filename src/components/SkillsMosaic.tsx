@@ -12,7 +12,7 @@ const SkillsMosaic = () => {
     },
     {
       category: 'Web Development',
-      color: 'orange',
+      color: 'dark-orange',
       skills: ['React', 'Next.js', 'Vue.js', 'HTML/CSS', 'Tailwind CSS', 'Bootstrap']
     },
     {
@@ -27,7 +27,7 @@ const SkillsMosaic = () => {
     },
     {
       category: 'Cloud & DevOps',
-      color: 'orange',
+      color: 'dark-orange',
       skills: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins', 'GitHub Actions', 'Terraform']
     },
     {
@@ -42,7 +42,7 @@ const SkillsMosaic = () => {
     },
     {
       category: 'Visualization & BI',
-      color: 'orange',
+      color: 'dark-orange',
       skills: ['Tableau', 'Power BI', 'Plotly', 'D3.js']
     },
     {
