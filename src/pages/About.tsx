@@ -769,7 +769,7 @@ const About = () => {
 
             {/* Scholarships & Awards Section */}
             <div className="space-y-6 mt-12 pt-8 border-t border-white/10">
-              <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+              <h3 className="text-2xl font-semibold text-white flex items-center gap-3">
                 <Award className="h-7 w-7 text-yellow-400" />
                 Scholarships & Awards
               </h3>
