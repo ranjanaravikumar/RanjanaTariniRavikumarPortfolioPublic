@@ -7,12 +7,12 @@ const SkillsMosaic = () => {
   const skillCategories = [
     {
       category: 'Programming Languages',
-      color: 'burgundy',
+      color: 'dark-red',
       skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'Go', 'Rust', 'SQL', 'R']
     },
     {
       category: 'Web Development',
-      color: 'dark-orange',
+      color: 'dark-red',
       skills: ['React', 'Next.js', 'Vue.js', 'HTML/CSS', 'Tailwind CSS', 'Bootstrap']
     },
     {
@@ -22,12 +22,12 @@ const SkillsMosaic = () => {
     },
     {
       category: 'Backend & APIs',
-      color: 'burgundy',
+      color: 'dark-red',
       skills: ['Node.js', 'Express', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'REST APIs', 'GraphQL']
     },
     {
       category: 'Cloud & DevOps',
-      color: 'dark-orange',
+      color: 'dark-red',
       skills: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins', 'GitHub Actions', 'Terraform']
     },
     {
@@ -37,12 +37,12 @@ const SkillsMosaic = () => {
     },
     {
       category: 'Big Data & Analytics',
-      color: 'burgundy',
+      color: 'dark-red',
       skills: ['Spark', 'Hadoop']
     },
     {
       category: 'Visualization & BI',
-      color: 'dark-orange',
+      color: 'dark-red',
       skills: ['Tableau', 'Power BI', 'Plotly', 'D3.js']
     },
     {
@@ -52,7 +52,7 @@ const SkillsMosaic = () => {
     },
     {
       category: 'Soft Skills',
-      color: 'burgundy',
+      color: 'dark-red',
       skills: ['Problem Solving', 'Communication', 'Leadership', 'Collaboration', 'Adaptability', 'Time Management']
     }
   ];
