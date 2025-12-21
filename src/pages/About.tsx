@@ -4,7 +4,7 @@ import { GlassButton } from "@/components/ui/glass-button"
 import { 
   X, User, FileText, Briefcase, Lightbulb, Award, Code, Download,
   ExternalLink, Calendar, MapPin, Github, Eye, Camera, Scissors,
-  Users, Coffee,GraduationCap,BookOpen, Phone
+  Users, Coffee,GraduationCap,BookOpen, Phone, Mail
 } from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
@@ -777,7 +777,6 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full" />
                     <div>
                       <h3 className="text-xl font-semibold text-white">Herbold ASU Graduate Engineering Scholarship</h3>
                       <p className="text-white/80 text-sm">Issued by Bob Herbold · Aug 2025</p>
@@ -806,7 +805,7 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
-                    <BookOpen className="h-8 w-8 text-blue-400" />
+                    <BookOpen className="h-8 w-8 text-white" />
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="text-xl font-semibold text-white">Convergence of Blockchain and IoT</h3>
@@ -865,8 +864,9 @@ const About = () => {
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Ranjana Tarini Ravikumar
                 </h1>
-                <p className="text-white/70 text-lg">
-                  I'm a current graduate student at Arizona State University (ASU), pursuing my Master's degree with an expected graduation in May 2026. 
+                 <p className="text-white/70 text-xs sm:text-sm md:text-base max-w-4xl mx-auto">
+                  I'm a current graduate student at Arizona State University (ASU), pursuing my Master's degree with an expected graduation in May 2026.</p>
+                 <p>
                   I'm passionate about building intelligent applications that solve real-world problems through AI and machine learning. 
                   I'm actively looking for full-time roles in software development, AI integration, and data science where I can contribute to meaningful projects while continuing to grow my expertise in RAG systems, LLM applications, and scalable backend architecture.
                 </p>
@@ -935,7 +935,7 @@ const About = () => {
             {/* Left: label */}
             <div className="flex items-center gap-2 text-white/60">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>Open to internships & collaborations</span>
+              <span>Open to work</span>
             </div>
 
             {/* Right: contact info */}
@@ -944,7 +944,7 @@ const About = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                 <div className="flex items-center gap-1">
                   <Phone className="h-4 w-4 text-white/60" />
-                  <span className="text-white/60">Call</span>
+                  
                 </div>
                 <a
                   href="tel:+14804695292"
@@ -956,7 +956,7 @@ const About = () => {
 
               {/* Email */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60">Email</span>
+                <Mail className="h-4 w-4 text-white/60" />
                 <a
                   href="mailto:ranjanatarini@gmail.com"
                   className="font-mono hover:underline text-white/90"
@@ -967,7 +967,7 @@ const About = () => {
 
               {/* Social */}
               <div className="flex items-center gap-2">
-                <span className="text-white/60 hidden sm:inline">Social</span>
+                
                 <a
                   href="www.linkedin.com/in/ranjana-tarini-ravikumar-023842133"
                   target="_blank"

@@ -58,12 +58,7 @@ const SkillsMosaic = () => {
   ];
 
   return (
-    <div className="skills-mosaic-container">
-      <div className="skills-header">
-        <h2>Skills & Expertise</h2>
-        <p>120+ Skills Across 10 Categories</p>
-      </div>
-
+    <div className="skills-mosaic-container">      
       <div className="skills-grid">
         {skillCategories.map((category, index) => (
           <div
@@ -87,21 +82,6 @@ const SkillsMosaic = () => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="skills-stats">
-        <div className="stat">
-          <div className="stat-number">10</div>
-          <div className="stat-label">Categories</div>
-        </div>
-        <div className="stat">
-          <div className="stat-number">120+</div>
-          <div className="stat-label">Skills</div>
-        </div>
-        <div className="stat">
-          <div className="stat-number">8+</div>
-          <div className="stat-label">Years Experience</div>
-        </div>
       </div>
     </div>
   );
