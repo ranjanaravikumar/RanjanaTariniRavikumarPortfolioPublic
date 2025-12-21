@@ -4,7 +4,7 @@ import { GlassButton } from "@/components/ui/glass-button"
 import { 
   X, User, FileText, Briefcase, Lightbulb, Award, Code, Download,
   ExternalLink, Calendar, MapPin, Github, Eye, Camera, Scissors,
-  Users, Coffee,GraduationCap,BookOpen
+  Users, Coffee,GraduationCap,BookOpen, Phone
 } from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
@@ -16,6 +16,7 @@ import asuLogo from "@/assets/asu-logo.png"
 import vitLogo from "@/assets/vit-logo.png"
 import introPhoto from "@/assets/me-hero.jpg"
 // import publicationImg from "@/assets/publication.png"
+import SkillsMosaic from '@/components/SkillsMosaic'
 
 type FlashcardProps = {
   title: string
@@ -148,6 +149,7 @@ const About = () => {
     { id: 'experience', label: 'Experience', icon: Briefcase },
     { id: 'interests', label: 'Interests', icon: Lightbulb },
     { id: 'certifications', label: 'Certifications', icon: Award },
+    { id: 'skills', label: 'Skills', icon: Code }, 
     { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'publications', label: 'Publications', icon: BookOpen },
   ]
@@ -163,11 +165,11 @@ const About = () => {
 
             <div className="flex flex-col md:flex-row gap-8 items-stretch">
               {/* Photo */}
-              <div className="w-full md:w-[32%] flex justify-center md:justify-start">
+              <div className="w-full md:w-[36%] flex justify-center md:justify-start">
                 <img
                   src={introPhoto}
                   alt="Ranjana Tarini Ravikumar"
-                  className="w-56 h-80 md:w-64 md:h-96 rounded-3xl object-cover border border-white/30 shadow-2xl"
+                  className="w-72 h-[26rem] md:w-80 md:h-[30rem] rounded-3xl object-cover border-4 border-white/40 shadow-2xl"
                 />
               </div>
 
@@ -701,10 +703,20 @@ const About = () => {
           </div>
         )
 
+      case 'skills':
+        return (
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-white">Skills & Expertise</h2>
+            <SkillsMosaic />
+          </div>
+        )
+
       case 'education':
         return (
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Education</h2>
+            
+            {/* Universities */}
             <div className="space-y-6">
               {/* ASU MS */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
@@ -754,40 +766,74 @@ const About = () => {
                 </p>
               </div>
             </div>
+
+            {/* Scholarships & Awards Section */}
+            <div className="space-y-6 mt-12 pt-8 border-t border-white/10">
+              <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                <Award className="h-7 w-7 text-yellow-400" />
+                Scholarships & Awards
+              </h3>
+              
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Herbold ASU Graduate Engineering Scholarship</h3>
+                      <p className="text-white/80 text-sm">Issued by Bob Herbold · Aug 2025</p>
+                      <p className="text-white/70 text-xs mt-1">Arizona State University</p>
+                    </div>
+                  </div>
+                  <div className="text-right text-white/70">
+                    <div className="text-sm font-medium">Software / Computer Engineering</div>
+                    <div className="text-xs">MS students</div>
+                  </div>
+                </div>
+                <p className="text-white/80 leading-relaxed">
+                  Awarded for academic excellence and demonstrating exceptional potential in computer science. 
+                  Recognizes outstanding achievement and commitment to technical innovation and research.
+                </p>
+              </div>
+            </div>
           </div>
         )
-      
+
       case 'publications':
         return (
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Publications</h2>
             <div className="space-y-6">
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20 flex gap-4">
-                <div className="flex-shrink-0 flex items-start">
-                  {/* icon + optional small image */}
-                  <div className="flex flex-col items-center gap-2">
-                    <BookOpen className="h-8 w-8 text-white" />
-                    {/* if you add an image */}
-                    {/* <img src={publicationImg} alt="Publication" className="h-12 w-12 rounded object-cover" /> */}
-                  </div>
-                </div>
-
-                <div className="flex-1">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">
-                        "Convergence of Blockchain and IoT"
-                      </h3>
-                      <p className="text-white/80">Springer, 5th ICDSMLA Conference • Oct 2023</p>
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="h-8 w-8 text-blue-400" />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="text-xl font-semibold text-white">Convergence of Blockchain and IoT</h3>
+                        <GlassButton
+                          asChild
+                          variant="ghost"
+                          size="sm"
+                          className="hover:bg-white/20 hover:text-white border-white/20 text-xs px-3 py-1 h-auto"
+                        >
+                          <a 
+                            href="https://doi.org/10.1007/978-981-97-8031-0_65"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            📄 View Paper
+                          </a>
+                        </GlassButton>
+                      </div>
+                      <p className="text-white/80 mb-1">Springer, 5th ICDSMLA Conference</p>
+                      <p className="text-white/70 text-sm">Oct 2023 • DOI: 10.1007/978-981-97-8031-0_65</p>
                     </div>
-                    {/* Optional external link if you have it later */}
-                    {/* <GlassButton ...>View Paper</GlassButton> */}
                   </div>
-                  <p className="text-white/80">
-                    Peer-reviewed work on blockchain–IoT integration architectures, exploring distributed
-                    ledgers and consensus mechanisms for decentralized networks.
-                  </p>
                 </div>
+                <p className="text-white/80 leading-relaxed">
+                  Peer-reviewed work on blockchain–IoT integration architectures, exploring distributed 
+                  ledgers and consensus mechanisms for decentralized networks.
+                </p>
               </div>
             </div>
           </div>
@@ -799,84 +845,150 @@ const About = () => {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
-      </div>
-
-      {/* Content Container */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
-        <div className="w-full max-w-4xl">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Ranjana Tarini Ravikumar
-            </h1>
-            <p className="text-white/70 text-lg">
-              Explore my professional journey
-            </p>
+    <div className="relative min-h-screen flex flex-col bg-[#020617]">
+      {/* main content */}
+      <div className="flex-1"></div>
+        <div className="min-h-screen relative overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          >
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
           </div>
 
-          {/* Navigation Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-            {sections.map((section) => {
-              const Icon = section.icon
-              return (
-                <GlassButton
-                  key={section.id}
-                  variant="ghost"
-                  className="h-20 flex-col gap-2 hover:bg-white/20 hover:text-white transition-all duration-300 border-white/20"
-                  onClick={() => setActiveSection(section.id)}
+          {/* Content Container */}
+          <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
+            <div className="w-full max-w-4xl">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                  Ranjana Tarini Ravikumar
+                </h1>
+                <p className="text-white/70 text-lg">
+                  I'm a current graduate student at Arizona State University (ASU), pursuing my Master's degree with an expected graduation in May 2026. 
+                  I'm passionate about building intelligent applications that solve real-world problems through AI and machine learning. 
+                  I'm actively looking for full-time roles in software development, AI integration, and data science where I can contribute to meaningful projects while continuing to grow my expertise in RAG systems, LLM applications, and scalable backend architecture.
+                </p>
+              </div>
+
+              {/* Navigation Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                {sections.map((section) => {
+                  const Icon = section.icon
+                  return (
+                    <GlassButton
+                      key={section.id}
+                      variant="ghost"
+                      className="h-20 flex-col gap-2 hover:bg-white/20 hover:text-white transition-all duration-300 border-white/20"
+                      onClick={() => setActiveSection(section.id)}
+                    >
+                      <Icon className="h-6 w-6" />
+                      <span className="text-sm font-medium">{section.label}</span>
+                    </GlassButton>
+                  )
+                })}
+              </div>
+
+              {/* Content Modal */}
+              {activeSection && (
+                <div 
+                  className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${backgroundImage})` }}
                 >
-                  <Icon className="h-6 w-6" />
-                  <span className="text-sm font-medium">{section.label}</span>
-                </GlassButton>
-              )
-            })}
-          </div>
-
-          {/* Content Modal */}
-          {activeSection && (
-            <div 
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${backgroundImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
-              <GlassCard className="w-full max-w-5xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">
-                <div className="relative p-6">
-                  <GlassButton
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-4 right-4 hover:bg-white/20 hover:text-white z-10"
-                    onClick={() => setActiveSection(null)}
-                  >
-                    <X className="h-4 w-4" />
-                  </GlassButton>
-                  <GlassCardContent className="pt-6">
-                    {renderContent()}
-                  </GlassCardContent>
+                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+                  <GlassCard className="w-full max-w-5xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">
+                    <div className="relative p-6">
+                      <GlassButton
+                        variant="ghost"
+                        size="icon"
+                        className="absolute top-4 right-4 hover:bg-white/20 hover:text-white z-10"
+                        onClick={() => setActiveSection(null)}
+                      >
+                        <X className="h-4 w-4" />
+                      </GlassButton>
+                      <GlassCardContent className="pt-6">
+                        {renderContent()}
+                      </GlassCardContent>
+                    </div>
+                  </GlassCard>
                 </div>
-              </GlassCard>
-            </div>
-          )}
+              )}
 
-          {/* Back to Home */}
-          <div className="text-center mt-8">
-            <GlassButton 
-              variant="ghost" 
-              className="hover:bg-white/20 hover:text-white border-white/20"
-              asChild
-            >
-              <Link to="/">Back to Home</Link>
-            </GlassButton>
+              {/* Back to Home */}
+              <div className="text-center mt-8">
+                <GlassButton 
+                  variant="ghost" 
+                  className="hover:bg-white/20 hover:text-white border-white/20"
+                  asChild
+                >
+                  <Link to="/">Back to Home</Link>
+                </GlassButton>
+              </div>
+            </div>
           </div>
         </div>
+        {/* Bottom contact bar */}
+        <footer className="w-full border-t border-white/10 bg-black/40 backdrop-blur-md">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+            
+            {/* Left: label */}
+            <div className="flex items-center gap-2 text-white/60">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>Open to internships & collaborations</span>
+            </div>
+
+            {/* Right: contact info */}
+            <div className="flex flex-wrap items-center gap-5 sm:gap-8 text-white">
+              {/* Call */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <div className="flex items-center gap-1">
+                  <Phone className="h-4 w-4 text-white/60" />
+                  <span className="text-white/60">Call</span>
+                </div>
+                <a
+                  href="tel:+14804695292"
+                  className="font-mono hover:underline text-white/90"
+                >
+                  +1 (623) 759-5172
+                </a>
+              </div>
+
+              {/* Email */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <span className="text-white/60">Email</span>
+                <a
+                  href="mailto:ranjanatarini@gmail.com"
+                  className="font-mono hover:underline text-white/90"
+                >
+                  ranjanaamutha@gmail.com
+                </a>
+              </div>
+
+              {/* Social */}
+              <div className="flex items-center gap-2">
+                <span className="text-white/60 hidden sm:inline">Social</span>
+                <a
+                  href="www.linkedin.com/in/ranjana-tarini-ravikumar-023842133"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-7 w-7 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20"
+                >
+                  <span className="text-xs">in</span>
+                </a>
+                <a
+                  href="https://github.com/ranjanaravikumar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-7 w-7 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
-    </div>
   )
 }
 
