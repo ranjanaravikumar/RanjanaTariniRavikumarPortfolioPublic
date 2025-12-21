@@ -4,15 +4,18 @@ import { GlassButton } from "@/components/ui/glass-button"
 import { 
   X, User, FileText, Briefcase, Lightbulb, Award, Code, Download,
   ExternalLink, Calendar, MapPin, Github, Eye, Camera, Scissors,
-  Users, Coffee
+  Users, Coffee,GraduationCap,BookOpen
 } from "lucide-react"
 import backgroundImage from "@/assets/background.jpg"
 import { Link } from "react-router-dom";
-import wallEdited from "@/assets/walledited.jpg"      
+import wallEdited from "@/assets/walledited.jpg"
 import deepWorkDrink from "@/assets/drink-1.jpg"      
 import joyPhoto from "@/assets/pic-2.jpg"             
 import myself from "@/assets/me-2.jpeg"
-
+import asuLogo from "@/assets/asu-logo.png"
+import vitLogo from "@/assets/vit-logo.png"
+import introPhoto from "@/assets/me-hero.jpg"
+// import publicationImg from "@/assets/publication.png"
 
 type FlashcardProps = {
   title: string
@@ -35,7 +38,7 @@ const Flashcard = ({
 
   return (
     <div
-      className="relative w-full h-96 cursor-pointer"
+      className="relative w-full h-[500px] cursor-pointer"
       onMouseEnter={() => setShowDescription(true)}
       onMouseLeave={() => setShowDescription(false)}
       onClick={() => setShowDescription((v) => !v)}
@@ -53,11 +56,11 @@ const Flashcard = ({
           <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
         )}
 
-        {/* Accent bar */}
+        {/* Accent bar
         <div
           className="absolute left-0 top-0 h-1 w-full"
           style={{ background: accent }}
-        />
+        /> */}
 
         {/* Content always visible, but text changes on hover */}
         <div className="relative h-full flex flex-col justify-between p-5">
@@ -144,7 +147,9 @@ const About = () => {
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'experience', label: 'Experience', icon: Briefcase },
     { id: 'interests', label: 'Interests', icon: Lightbulb },
-    { id: 'certifications', label: 'Certifications', icon: Award }
+    { id: 'certifications', label: 'Certifications', icon: Award },
+    { id: 'education', label: 'Education', icon: GraduationCap },
+    { id: 'publications', label: 'Publications', icon: BookOpen },
   ]
 
 
@@ -155,7 +160,18 @@ const About = () => {
         return (
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Introduction</h2>
-            <div className="space-y-4 text-white/90 leading-relaxed">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              {/* Photo */}
+              <div className="w-full md:w-1/3 flex justify-center">
+                <img
+                  src={introPhoto}
+                  alt="Ranjana Tarini Ravikumar"
+                  className="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover border border-white/30 shadow-xl"
+                />
+              </div>
+
+              {/* Text */}
+              <div className="space-y-4 text-white/90 leading-relaxed md:w-2/3">
               <p>
                 Hello! I'm Ranjana Tarini Ravikumar, someone who loves asking "why," not just "how." At the heart of everything I do is a simple belief: every problem is a design opportunity, not a roadblock. Whether it's a bug in a project or a completely new idea, I enjoy breaking it down, understanding the moving pieces, and slowly shaping it into something that actually works and helps people, with the optimism that there's always a better version waiting to be built.
               </p>
@@ -167,6 +183,7 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
         )
       case 'resume':
         return (
@@ -550,7 +567,7 @@ const About = () => {
       case 'interests':
         return (
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-white">On the Personal Side</h2>
+            <h2 className="text-3xl font-bold text-white">Personal Interests</h2>
             <p className="text-white/70 text-sm">
               The interests and passions that define me.
             </p>
@@ -570,7 +587,7 @@ const About = () => {
               </button>
 
               {/* Centered flashcard – takes up most space */}
-              <div className="flex-1 max-w-2xl flex justify-center">
+              <div className="flex-1 max-w-4xl flex justify-center"> 
                 <Flashcard {...interestCards[currentInterest]} />
               </div>
 
@@ -600,56 +617,167 @@ const About = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Certifications</h2>
             <div className="space-y-6">
-              {/* Certification 1 */}
+              {/* AWS */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
                     <Award className="h-6 w-6 text-white" />
                     <div>
-                      <h3 className="text-xl font-semibold text-white">AWS Certified Solutions Architect</h3>
+                      <h3 className="text-xl font-semibold text-white">AWS Certified Cloud Practitioner</h3>
                       <p className="text-white/80">Amazon Web Services</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="flex items-center gap-1 text-white/70 text-sm mb-2">
-                      <Calendar className="h-4 w-4" />
-                      2023
-                    </div>
-                    <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
-                      <Eye className="h-4 w-4 mr-2" />
-                      View Credential
+                    <GlassButton
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="hover:bg-white/20 hover:text-white border-white/20"
+                    >
+                      <a
+                        href="https://drive.google.com/file/d/1KsK3Pyz4V6H49Y2surLvWxvtgWTT30io/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Eye className="h-4 w-4 mr-2" />
+                        View Credential
+                      </a>
                     </GlassButton>
                   </div>
                 </div>
-                <p className="text-white/80">Comprehensive certification covering cloud architecture and AWS services.</p>
+                <p className="text-white/80">
+                  Validates cloud fundamentals, core AWS services, security, and cost management.
+                </p>
               </div>
 
-              {/* Certification 2 */}
+              {/* Machine Learning with Python */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
                     <Award className="h-6 w-6 text-white" />
                     <div>
-                      <h3 className="text-xl font-semibold text-white">Google Data Analytics Certificate</h3>
-                      <p className="text-white/80">Google</p>
+                      <h3 className="text-xl font-semibold text-white">Machine Learning with Python</h3>
+                      <p className="text-white/80">Coursera / IBM</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="flex items-center gap-1 text-white/70 text-sm mb-2">
-                      <Calendar className="h-4 w-4" />
-                      2022
-                    </div>
-                    <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
-                      <Eye className="h-4 w-4 mr-2" />
-                      View Credential
+                    <GlassButton
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="hover:bg-white/20 hover:text-white border-white/20"
+                    >
+                      <a
+                        href="https://drive.google.com/file/d/1M1gZiwMiScbyKyLeIpF0lBgB5cXgFohj/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Eye className="h-4 w-4 mr-2" />
+                        View Credential
+                      </a>
                     </GlassButton>
                   </div>
                 </div>
-                <p className="text-white/80">Professional certificate program covering data analysis tools and techniques.</p>
+                <p className="text-white/80">
+                  Covers supervised and unsupervised learning, model evaluation, and scikit-learn-based ML workflows.
+                </p>
               </div>
             </div>
           </div>
         )
+
+      case 'education':
+        return (
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-white">Education</h2>
+            <div className="space-y-6">
+              {/* ASU MS */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <img src={asuLogo} alt="ASU" className="h-12 w-12 rounded-lg object-contain" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">MS Computer Science</h3>
+                      <p className="text-white/80">Arizona State University, Tempe, AZ</p>
+                    </div>
+                  </div>
+                  <div className="text-right text-white/70 text-sm">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Calendar className="h-4 w-4" />
+                      Aug 2024 – May 2026
+                    </div>
+                    <div className="text-lg font-bold text-white">GPA: 4.0/4.0</div>
+                  </div>
+                </div>
+                <p className="text-white/80 mb-3">
+                  Data Visualization • Data Mining • Software Verification • Data Processing at Scale
+                </p>
+              </div>
+
+              {/* VIT BTech */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <img src={vitLogo} alt="VIT" className="h-12 w-12 rounded-lg object-contain" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">
+                        B.Tech. Computer Science (Information Security)
+                      </h3>
+                      <p className="text-white/80">Vellore Institute of Technology, Vellore, India</p>
+                    </div>
+                  </div>
+                  <div className="text-right text-white/70 text-sm">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Calendar className="h-4 w-4" />
+                      Sep 2020 – Jul 2024
+                    </div>
+                    <div className="text-lg font-semibold text-white">GPA: 3.38/4.0</div>
+                  </div>
+                </div>
+                <p className="text-white/80">
+                  OOPS • Design & Algorithms • DBMS • AI • Expert Systems • Cyber Security
+                </p>
+              </div>
+            </div>
+          </div>
+        )
+      
+      case 'publications':
+        return (
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-white">Publications</h2>
+            <div className="space-y-6">
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20 flex gap-4">
+                <div className="flex-shrink-0 flex items-start">
+                  {/* icon + optional small image */}
+                  <div className="flex flex-col items-center gap-2">
+                    <BookOpen className="h-8 w-8 text-white" />
+                    {/* if you add an image */}
+                    {/* <img src={publicationImg} alt="Publication" className="h-12 w-12 rounded object-cover" /> */}
+                  </div>
+                </div>
+
+                <div className="flex-1">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">
+                        "Convergence of Blockchain and IoT"
+                      </h3>
+                      <p className="text-white/80">Springer, 5th ICDSMLA Conference • Oct 2023</p>
+                    </div>
+                    {/* Optional external link if you have it later */}
+                    {/* <GlassButton ...>View Paper</GlassButton> */}
+                  </div>
+                  <p className="text-white/80">
+                    Peer-reviewed work on blockchain–IoT integration architectures, exploring distributed
+                    ledgers and consensus mechanisms for decentralized networks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+
       default:
         return null
     }
