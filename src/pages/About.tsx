@@ -156,35 +156,50 @@ const About = () => {
 
   const renderContent = () => {
     switch (activeSection) {
-      case 'intro':
+      case "intro":
         return (
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Introduction</h2>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
+
+            <div className="flex flex-col md:flex-row gap-8 items-stretch">
               {/* Photo */}
-              <div className="w-full md:w-1/3 flex justify-center">
+              <div className="w-full md:w-[32%] flex justify-center md:justify-start">
                 <img
                   src={introPhoto}
                   alt="Ranjana Tarini Ravikumar"
-                  className="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover border border-white/30 shadow-xl"
+                  className="w-56 h-72 md:w-64 md:h-80 rounded-3xl object-cover border border-white/30 shadow-2xl"
                 />
               </div>
 
               {/* Text */}
-              <div className="space-y-4 text-white/90 leading-relaxed md:w-2/3">
-              <p>
-                Hello! I'm Ranjana Tarini Ravikumar, someone who loves asking "why," not just "how." At the heart of everything I do is a simple belief: every problem is a design opportunity, not a roadblock. Whether it's a bug in a project or a completely new idea, I enjoy breaking it down, understanding the moving pieces, and slowly shaping it into something that actually works and helps people, with the optimism that there's always a better version waiting to be built.
-              </p>
-              <p>
-                I'm a very detail‑oriented thinker, but I don't like overcomplicating things just to sound "technical." I like keeping things clear and honest, and I enjoy the process of steadily improving something, one small decision at a time.
-              </p>
-              <p>
-                My default mode is calm, curious, and persistent, and I tend to approach challenges with the mindset that they're figure‑out‑able. I enjoy balancing structure and flexibility, planning thoughtfully, but staying open to better ideas as I learn more and I try to bring a hopeful, forward‑looking attitude into every project and collaboration.
-              </p>
+              <div className="w-full md:w-[68%] flex items-center">
+                <div className="space-y-4 text-white/90 leading-relaxed text-[15px] md:text-[16px]">
+                  <p>
+                    Hello! I'm Ranjana Tarini Ravikumar, someone who loves asking "why," not just "how."
+                    At the heart of everything I do is a simple belief: every problem is a design
+                    opportunity, not a roadblock. Whether it's a bug in a project or a completely new
+                    idea, I enjoy breaking it down, understanding the moving pieces, and slowly shaping
+                    it into something that actually works and helps people, with the optimism that
+                    there's always a better version waiting to be built.
+                  </p>
+                  <p>
+                    I'm a very detail‑oriented thinker, but I don't like overcomplicating things just to
+                    sound "technical." I like keeping things clear and honest, and I enjoy the process of
+                    steadily improving something, one small decision at a time.
+                  </p>
+                  <p>
+                    My default mode is calm, curious, and persistent, and I tend to approach challenges
+                    with the mindset that they're figure‑out‑able. I enjoy balancing structure and
+                    flexibility, planning thoughtfully, but staying open to better ideas as I learn more
+                    and I try to bring a hopeful, forward‑looking attitude into every project and
+                    collaboration.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         )
+
       case 'resume':
         return (
           <div className="space-y-6">
@@ -831,7 +846,7 @@ const About = () => {
               style={{ backgroundImage: `url(${backgroundImage})` }}
             >
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
-              <GlassCard className="w-full max-w-4xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">
+              <GlassCard className="w-full max-w-5xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">
                 <div className="relative p-6">
                   <GlassButton
                     variant="ghost"
