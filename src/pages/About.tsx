@@ -865,7 +865,7 @@ const About = () => {
                   Ranjana Tarini Ravikumar
                 </h1>
                  <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
-                  I'm a current graduate student at Arizona State University (ASU), pursuing my Master's degree with an expected graduation in May 2026.</p>
+                  I'm a current graduate student at Arizona State University, pursuing my Master's with an expected graduation in May 2026.</p>
                  <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
                   I'm passionate about building intelligent applications that solve real-world problems through AI and machine learning. 
                   I'm actively looking for full-time roles in software development, AI integration, and data science where I can contribute to meaningful projects while continuing to grow my expertise in RAG systems, LLM applications, and scalable backend architecture.
