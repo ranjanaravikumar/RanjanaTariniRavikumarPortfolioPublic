@@ -134,7 +134,7 @@ const About = () => {
       title: "Crafting & Thoughtful Details",
       subtitle: "Handmade things",
       description:
-        "Enjoy creating handmade crafts and small personal projects, and care a lot about the thought, time, and effort behind something handcrafted—not just the final object.",
+        "Enjoy creating handmade crafts and small personal projects, and value the effort and intention behind thoughtful, handcrafted gifts more than the object itself.",
       image: wallEdited, 
       accent: "linear-gradient(90deg,#f97316,#facc15)",
       icon: Scissors,
@@ -167,7 +167,7 @@ const About = () => {
                 <img
                   src={introPhoto}
                   alt="Ranjana Tarini Ravikumar"
-                  className="w-56 h-72 md:w-64 md:h-80 rounded-3xl object-cover border border-white/30 shadow-2xl"
+                  className="w-56 h-80 md:w-64 md:h-96 rounded-3xl object-cover border border-white/30 shadow-2xl"
                 />
               </div>
 
@@ -721,7 +721,7 @@ const About = () => {
                       <Calendar className="h-4 w-4" />
                       Aug 2024 – May 2026
                     </div>
-                    <div className="text-lg font-bold text-white">GPA: 4.0/4.0</div>
+                    <div className="text-lg font-semibold text-white">GPA: 4.0/4.0</div>
                   </div>
                 </div>
                 <p className="text-white/80 mb-3">

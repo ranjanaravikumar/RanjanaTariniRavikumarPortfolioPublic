@@ -59,12 +59,12 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;          
   }
 
   #root {
-    transform: scale(1.08);      
+    transform: scale(1.06);      
     transform-origin: top center;
   }
 }
