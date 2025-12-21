@@ -929,7 +929,7 @@ const About = () => {
           </div>
         </div>
         {/* Bottom contact bar */}
-        <footer className="w-full border-t border-white/20 bg-black/15 backdrop-blur-lg">
+        <footer className="w-full border-t border-white/20 bg-[#4A4238]/80 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             
             {/* Left: label */}
