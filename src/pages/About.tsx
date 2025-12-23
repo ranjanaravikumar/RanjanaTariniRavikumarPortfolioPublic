@@ -963,7 +963,7 @@ const About = () => {
         </div>
 
         {/* Footer inside the z-10 container, so background continues behind */}
-        <footer className="w-full border-t border-white/20 bg-black/10 backdrop-blur-lg">
+        <footer className="w-full border-t border-white/20 bg-white/20 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             {/* Left: label */}
             <div className="flex items-center gap-2 text-white/60">
