@@ -737,7 +737,14 @@ const About = () => {
                   </div>
                 </div>
                 <p className="text-white/80 mb-3">
-                  Data Visualization • Data Mining • Software Verification • Data Processing at Scale
+                  Software Verification • Data Mining • Data Visualization • Statistical Machine Learning
+                  ASU's vibrant community and collaborative culture transformed my perspective on work-life balance, 
+                  cultural diversity, and the importance of building meaningful connections beyond academics.
+                  Volunteered with ICA (Indian Cultural Association), organizing community events and fostering 
+                  cultural exchange among graduate students. Engaged in full-stack software development, building 
+                  production-ready applications with clean code practices.
+                  Advanced expertise in TensorFlow, PyTorch, and conversational AI
+                   while discovering my passion for ethical AI. 
                 </p>
               </div>
 
@@ -762,7 +769,11 @@ const About = () => {
                   </div>
                 </div>
                 <p className="text-white/80">
-                  OOPS • Design & Algorithms • DBMS • AI • Expert Systems • Cyber Security
+                  OOPS • Design & Algorithms • DBMS • AI • Expert Systems • Cyber Security <hr />
+                  Coordinated Zero Waste Management Club, scaling campus-wide recycling participation and partnering with local organizations for 
+                  sustainable practices. Organized Catalyst Club technical events including noticable the "Kryptonian" challenge, fostering collaborative 
+                  problem-solving among 100+ participants.
+                  Gained comprehensive computer science fundamentals while discovering my passion and gaining soft skills. 
                 </p>
               </div>
             </div>
@@ -870,29 +881,31 @@ const About = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-4xl mx-auto">
                 {/* Graduation */}
-                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-4 border-l-[#4A4238]/70">
                   <p className="text-white text-sm">ASU Master's Degree</p>
-                  <p className="text-white/60 text-xs">Graduation May 2026</p>
+                  <p className="text-white/60 text-xs">Graduating May 2026</p>
                 </div>
 
                 {/* Status */}
-                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-4 border-l-[#4A4238]/70">
                   <p className="text-white text-sm">Actively Looking</p>
                   <p className="text-white/60 text-xs">Full-time Roles</p>
                 </div>
 
                 {/* Location */}
-                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-4 border-l-[#4A4238]/70">
                   <p className="text-white text-sm">Arizona State University</p>
                   <p className="text-white/60 text-xs">Tempe, AZ, USA</p>
                 </div>
               </div>
 
               <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
+                I'm passionate about building intelligent applications that solve real-world problems through AI and machine learning. 
                 Seeking opportunities in software development, AI integration, and data science where I can contribute to meaningful projects.
               </p>
             </div>
-            
+
+
             {/* Navigation Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
               {sections.map((section) => {
@@ -950,7 +963,7 @@ const About = () => {
         </div>
 
         {/* Footer inside the z-10 container, so background continues behind */}
-        <footer className="w-full border-t border-white/20 bg-black/60 backdrop-blur-lg">
+        <footer className="w-full border-t border-white/20 bg-black/10 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             {/* Left: label */}
             <div className="flex items-center gap-2 text-white/60">

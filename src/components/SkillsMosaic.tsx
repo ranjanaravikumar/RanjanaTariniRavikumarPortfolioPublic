@@ -23,17 +23,17 @@ const SkillsMosaic = () => {
     {
       category: 'Backend & APIs',
       color: 'dark-red',
-      skills: ['Node.js', 'Express', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'REST APIs', 'GraphQL']
+      skills: ['Node.js', 'Express', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'REST APIs']
     },
     {
       category: 'Cloud & DevOps',
       color: 'dark-red',
-      skills: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins', 'GitHub Actions', 'Terraform']
+      skills: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins', 'GitHub Actions']
     },
     {
       category: 'Databases',
       color: 'dark-red',
-      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'DynamoDB', 'Elasticsearch']
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'DynamoDB']
     },
     {
       category: 'Big Data & Analytics',
@@ -43,12 +43,12 @@ const SkillsMosaic = () => {
     {
       category: 'Visualization & BI',
       color: 'dark-red',
-      skills: ['Tableau', 'Power BI', 'Plotly', 'D3.js']
+      skills: ['Tableau', 'Power BI']
     },
     {
       category: 'Development Practices',
       color: 'dark-red',
-      skills: ['Git', 'Testing', 'Debugging', 'Code Review', 'Agile', 'Linux']
+      skills: ['Git', 'Testing', 'Debugging', 'Code Review', 'Agile']
     },
     {
       category: 'Soft Skills',
