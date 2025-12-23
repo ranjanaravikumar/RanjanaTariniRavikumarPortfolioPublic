@@ -844,94 +844,96 @@ const About = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#020617]">
-      {/* main content */}
-      <div className="flex-1"></div>
-        <div className="min-h-screen relative overflow-hidden">
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-          >
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
-          </div>
 
-          {/* Content Container */}
-          <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
-            <div className="w-full max-w-4xl">
-              {/* Header */}
-              <div className="text-center mb-8">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                  Ranjana Tarini Ravikumar
-                </h1>
-                 <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
-                  I'm a current graduate student at Arizona State University, pursuing my Master's with an expected graduation in May 2026.</p>
-                 <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
-                  I'm passionate about building intelligent applications that solve real-world problems through AI and machine learning. 
-                  I'm actively looking for full-time roles in software development, AI integration, and data science where I can contribute to meaningful projects while continuing to grow my expertise in RAG systems, LLM applications, and scalable backend architecture.
-                </p>
-              </div>
+    <div
+      className="relative min-h-screen flex flex-col"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
 
-              {/* Navigation Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                {sections.map((section) => {
-                  const Icon = section.icon
-                  return (
+      {/* Main content + footer all inside */}
+      <div className="relative z-10 flex flex-col flex-1">
+        {/* Content Container */}
+        <div className="flex-1 flex items-center justify-center p-4">
+          <div className="w-full max-w-4xl">
+            {/* Header */}
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Ranjana Tarini Ravikumar
+              </h1>
+              <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
+                I'm a current graduate student at Arizona State University...
+              </p>
+              <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
+                I'm passionate about building intelligent applications...
+              </p>
+            </div>
+
+            {/* Navigation Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              {sections.map((section) => {
+                const Icon = section.icon
+                return (
+                  <GlassButton
+                    key={section.id}
+                    variant="ghost"
+                    className="h-20 flex-col gap-2 hover:bg-white/20 hover:text-white transition-all duration-300 border-white/20"
+                    onClick={() => setActiveSection(section.id)}
+                  >
+                    <Icon className="h-6 w-6" />
+                    <span className="text-sm font-medium">{section.label}</span>
+                  </GlassButton>
+                )
+              })}
+            </div>
+
+            {/* Content Modal */}
+            {activeSection && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${backgroundImage})` }}
+              >
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+                <GlassCard className="w-full max-w-5xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">
+                  <div className="relative p-6">
                     <GlassButton
-                      key={section.id}
                       variant="ghost"
-                      className="h-20 flex-col gap-2 hover:bg-white/20 hover:text-white transition-all duration-300 border-white/20"
-                      onClick={() => setActiveSection(section.id)}
+                      size="icon"
+                      className="absolute top-4 right-4 hover:bg-white/20 hover:text-white z-10"
+                      onClick={() => setActiveSection(null)}
                     >
-                      <Icon className="h-6 w-6" />
-                      <span className="text-sm font-medium">{section.label}</span>
+                      <X className="h-4 w-4" />
                     </GlassButton>
-                  )
-                })}
+                    <GlassCardContent className="pt-6">
+                      {renderContent()}
+                    </GlassCardContent>
+                  </div>
+                </GlassCard>
               </div>
+            )}
 
-              {/* Content Modal */}
-              {activeSection && (
-                <div 
-                  className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${backgroundImage})` }}
-                >
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
-                  <GlassCard className="w-full max-w-5xl max-h-[90vh] overflow-y-auto border-white/20 shadow-2xl relative z-10">
-                    <div className="relative p-6">
-                      <GlassButton
-                        variant="ghost"
-                        size="icon"
-                        className="absolute top-4 right-4 hover:bg-white/20 hover:text-white z-10"
-                        onClick={() => setActiveSection(null)}
-                      >
-                        <X className="h-4 w-4" />
-                      </GlassButton>
-                      <GlassCardContent className="pt-6">
-                        {renderContent()}
-                      </GlassCardContent>
-                    </div>
-                  </GlassCard>
-                </div>
-              )}
-
-              {/* Back to Home */}
-              <div className="text-center mt-8">
-                <GlassButton 
-                  variant="ghost" 
-                  className="hover:bg-white/20 hover:text-white border-white/20"
-                  asChild
-                >
-                  <Link to="/">Back to Home</Link>
-                </GlassButton>
-              </div>
+            {/* Back to Home */}
+            <div className="text-center mt-8 mb-4">
+              <GlassButton
+                variant="ghost"
+                className="hover:bg-white/20 hover:text-white border-white/20"
+                asChild
+              >
+                <Link to="/">Back to Home</Link>
+              </GlassButton>
             </div>
           </div>
         </div>
-        {/* Bottom contact bar */}
-        <footer className="w-full border-t border-white/20 bg-[#4A4238]/80 backdrop-blur-lg">
+
+        {/* Footer inside the z-10 container, so background continues behind */}
+        <footer className="w-full border-t border-white/20 bg-black/20 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-            
             {/* Left: label */}
             <div className="flex items-center gap-2 text-white/60">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -942,10 +944,7 @@ const About = () => {
             <div className="flex flex-wrap items-center gap-5 sm:gap-8 text-white">
               {/* Call */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <div className="flex items-center gap-1">
-                  <Phone className="h-4 w-4 text-white/60" />
-                  
-                </div>
+                <Phone className="h-4 w-4 text-white/60" />
                 <a
                   href="tel:+14804695292"
                   className="font-mono hover:underline text-white/90"
@@ -958,7 +957,7 @@ const About = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                 <Mail className="h-4 w-4 text-white/60" />
                 <a
-                  href="mailto:ranjanatarini@gmail.com"
+                  href="mailto:ranjanaamutha@gmail.com"
                   className="font-mono hover:underline text-white/90"
                 >
                   ranjanaamutha@gmail.com
@@ -967,9 +966,8 @@ const About = () => {
 
               {/* Social */}
               <div className="flex items-center gap-2">
-                
                 <a
-                  href="www.linkedin.com/in/ranjana-tarini-ravikumar-023842133"
+                  href="https://www.linkedin.com/in/ranjana-tarini-ravikumar-023842133"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-7 w-7 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20"
@@ -989,6 +987,7 @@ const About = () => {
           </div>
         </footer>
       </div>
+    </div>
   )
 }
 
