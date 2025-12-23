@@ -864,17 +864,35 @@ const About = () => {
           <div className="w-full max-w-4xl">
             {/* Header */}
             <div className="text-center mb-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8">
                 Ranjana Tarini Ravikumar
               </h1>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-4xl mx-auto">
+                {/* Graduation */}
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur">
+                  <p className="text-white text-sm">ASU Master's Degree</p>
+                  <p className="text-white/60 text-xs">Graduation May 2026</p>
+                </div>
+
+                {/* Status */}
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur">
+                  <p className="text-white text-sm">Actively Looking</p>
+                  <p className="text-white/60 text-xs">Full-time Roles</p>
+                </div>
+
+                {/* Location */}
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur">
+                  <p className="text-white text-sm">Arizona State University</p>
+                  <p className="text-white/60 text-xs">Tempe, AZ, USA</p>
+                </div>
+              </div>
+
               <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
-                I'm a current graduate student at Arizona State University...
-              </p>
-              <p className="text-white/70 text-xs sm:text-xs md:text-sm max-w-4xl mx-auto">
-                I'm passionate about building intelligent applications...
+                Seeking opportunities in software development, AI integration, and data science where I can contribute to meaningful projects.
               </p>
             </div>
-
+            
             {/* Navigation Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
               {sections.map((section) => {
@@ -932,7 +950,7 @@ const About = () => {
         </div>
 
         {/* Footer inside the z-10 container, so background continues behind */}
-        <footer className="w-full border-t border-white/20 bg-black/20 backdrop-blur-lg">
+        <footer className="w-full border-t border-white/20 bg-black/60 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             {/* Left: label */}
             <div className="flex items-center gap-2 text-white/60">
