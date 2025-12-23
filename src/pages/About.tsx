@@ -866,7 +866,7 @@ const About = () => {
       }}
     >
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-black/25 backdrop-blur-[1px]" />
 
       {/* Main content + footer all inside */}
       <div className="relative z-10 flex flex-col flex-1">
@@ -887,13 +887,13 @@ const About = () => {
                 </div>
 
                 {/* Status */}
-                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-6 border-l-[#e8aaa7]/70">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-6 border-l-[#e29591]/70">
                   <p className="text-white text-sm">Actively Looking</p>
                   <p className="text-white/60 text-xs">Full-time Roles</p>
                 </div>
 
                 {/* Location */}
-                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-6 border-l-[#ff907f]/70">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-6 border-l-[#e29591]/70">
                   <p className="text-white text-sm">Arizona State University</p>
                   <p className="text-white/60 text-xs">Tempe, AZ, USA</p>
                 </div>
@@ -963,7 +963,7 @@ const About = () => {
         </div>
 
         {/* Footer inside the z-10 container, so background continues behind */}
-        <footer className="w-full border-t border-white/20 bg-black/15 backdrop-blur-lg">
+        <footer className="w-full border-t border-white/20 bg-black/20 backdrop-blur-lg">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             {/* Left: label */}
             <div className="flex items-center gap-2 text-white/60">
