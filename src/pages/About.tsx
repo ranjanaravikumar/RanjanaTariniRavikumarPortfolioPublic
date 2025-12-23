@@ -866,7 +866,7 @@ const About = () => {
       }}
     >
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px]" />
 
       {/* Main content + footer all inside */}
       <div className="relative z-10 flex flex-col flex-1">
