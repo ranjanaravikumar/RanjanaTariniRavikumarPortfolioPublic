@@ -213,7 +213,7 @@ const About = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=11OWAeKxPS562mTrXLkZro2dekJJ3_kNj"
+                  href="https://drive.google.com/uc?export=download&id=1rfXbcdaLnfBtNFEsA4hU7id-wCE1nMhF"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,7 +224,7 @@ const About = () => {
             </div>
             <div className="bg-white/10 rounded-lg p-6 border border-white/20 max-w-4xl mx-auto">
               <iframe
-                src="https://drive.google.com/file/d/11OWAeKxPS562mTrXLkZro2dekJJ3_kNj/preview"
+                src="https://drive.google.com/file/d/1rfXbcdaLnfBtNFEsA4hU7id-wCE1nMhF/preview"
                 className="w-full h-[650px] md:h-[750px] rounded-xl"
                 title="Resume"
               />
