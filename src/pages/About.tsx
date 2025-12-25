@@ -213,7 +213,7 @@ const About = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1B-E9BtnUjTACgkaoEn0KaD-n0SjHi8Zx"
+                  href="https://drive.google.com/uc?export=download&id=11OWAeKxPS562mTrXLkZro2dekJJ3_kNj"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,7 +224,7 @@ const About = () => {
             </div>
             <div className="bg-white/10 rounded-lg p-6 border border-white/20 max-w-4xl mx-auto">
               <iframe
-                src="https://drive.google.com/file/d/1B-E9BtnUjTACgkaoEn0KaD-n0SjHi8Zx/preview"
+                src="https://drive.google.com/file/d/11OWAeKxPS562mTrXLkZro2dekJJ3_kNj/preview"
                 className="w-full h-[650px] md:h-[750px] rounded-xl"
                 title="Resume"
               />
@@ -988,10 +988,10 @@ const About = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                 <Mail className="h-4 w-4 text-white/60" />
                 <a
-                  href="mailto:ranjanaamutha@gmail.com"
+                  href="mailto:rraviku8@asu.edu"
                   className="font-mono hover:underline text-white/90"
                 >
-                  ranjanaamutha@gmail.com
+                  rraviku8@asu.edu
                 </a>
               </div>
 

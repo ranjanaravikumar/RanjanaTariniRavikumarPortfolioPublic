@@ -10,7 +10,7 @@ const Portfolio = () => {
     { icon: Linkedin, href: "https://www.linkedin.com/in/ranjana-tarini-ravikumar-023842133/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/ranjanaravikumar", label: "GitHub" },
     { icon: Phone, href: "tel:+16237595172", label: "Phone" },
-    { icon: Mail, href: "mailto:ranjanaamutha@gmail.com", label: "Email" }
+    { icon: Mail, href: "mailto:rraviku8@asu.edu", label: "Email" }
   ]
 
 const getBasePath = (path: string) => `/RanjanaTariniRavikumarPortfolioPublic${path}`
