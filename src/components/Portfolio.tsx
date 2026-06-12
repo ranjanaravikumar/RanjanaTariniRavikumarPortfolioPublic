@@ -1,8 +1,8 @@
 import { GlassCard, GlassCardContent, GlassCardHeader, GlassCardTitle } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { Github, Linkedin, Mail, Phone, ArrowRight } from "lucide-react"
-import backgroundImage from "@/assets/background.jpg"
-import profilePic from "@/assets/Ranjana-Tarini-Ravikumar.jpg"
+import backgroundImage from "@/assets/background.webp"
+import profilePic from "@/assets/Ranjana-Tarini-Ravikumar.webp"
 
 
 const Portfolio = () => {

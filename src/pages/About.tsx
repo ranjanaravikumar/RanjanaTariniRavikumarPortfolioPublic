@@ -6,15 +6,15 @@ import {
   ExternalLink, Calendar, MapPin, Github, Eye, Camera, Scissors,
   Users, Coffee,GraduationCap,BookOpen, Phone, Mail
 } from "lucide-react"
-import backgroundImage from "@/assets/background.jpg"
+import backgroundImage from "@/assets/background.webp"
 import { Link } from "react-router-dom";
-import wallEdited from "@/assets/walledited.jpg"
-import deepWorkDrink from "@/assets/drink-1.jpg"      
-import joyPhoto from "@/assets/pic-2.jpg"             
-import myself from "@/assets/me-2.jpeg"
-import asuLogo from "@/assets/asu-logo.png"
-import vitLogo from "@/assets/vit-logo.png"
-import introPhoto from "@/assets/me-hero.jpg"
+import wallEdited from "@/assets/walledited.webp"
+import deepWorkDrink from "@/assets/drink-1.webp"      
+import joyPhoto from "@/assets/pic-2.webp"             
+import myself from "@/assets/me-2.webp"
+import asuLogo from "@/assets/asu-logo.webp"
+import vitLogo from "@/assets/vit-logo.webp"
+import introPhoto from "@/assets/me-hero.webp"
 // import publicationImg from "@/assets/publication.png"
 import SkillsMosaic from '@/components/SkillsMosaic'
 
@@ -722,7 +722,7 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
-                    <img src={asuLogo} alt="ASU" className="h-12 w-12 rounded-lg object-contain" />
+                    <img src={asuLogo} alt="ASU" className="h-12 w-12 rounded-lg object-contain" loading="lazy" />
                     <div>
                       <h3 className="text-xl font-semibold text-white">MS Computer Science</h3>
                       <p className="text-white/80">Arizona State University, Tempe, AZ</p>
@@ -752,7 +752,7 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
-                    <img src={vitLogo} alt="VIT" className="h-12 w-12 rounded-lg object-contain" />
+                    <img src={vitLogo} alt="VIT" className="h-12 w-12 rounded-lg object-contain" loading="lazy"/>
                     <div>
                       <h3 className="text-xl font-semibold text-white">
                         B.Tech. Computer Science (Information Security)
