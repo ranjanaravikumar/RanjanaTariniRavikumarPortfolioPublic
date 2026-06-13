@@ -2,19 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      (function () {
-        var redirect = sessionStorage.getItem('spa-redirect');
-        if (redirect) {
-          sessionStorage.removeItem('spa-redirect');
-          window.history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ranjana Tarini Ravikumar - Portfolio</title>
 
-    
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== window.location.pathname) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
 
     <meta name="description" content="Personal portfolio of Ranjana Tarini Ravikumar - Software Developer & Designer" />
     <meta name="author" content="Ranjana Tarini Ravikumar" />
@@ -29,7 +28,6 @@
     <meta property="og:description" content="Personal portfolio of Ranjana Tarini Ravikumar - Software Developer & Designer" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/RanjanaTariniRavikumarPortfolioPublic/assets/me-hero-Bo8AiRvG.jpg" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/RanjanaTariniRavikumarPortfolioPublic/assets/me-hero-Bo8AiRvG.jpg" />
 
