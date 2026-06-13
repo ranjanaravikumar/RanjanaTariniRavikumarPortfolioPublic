@@ -213,7 +213,7 @@ const About = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1A79c0waIBHY5d9h6F-GbZw39X7-s06at"
+                  href="https://drive.google.com/uc?export=download&id=1MTiSvOR669XAlDqESVw_3twy88jIYk3j"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,7 +224,7 @@ const About = () => {
             </div>
             <div className="bg-white/10 rounded-lg p-6 border border-white/20 max-w-4xl mx-auto">
               <iframe
-                src="https://drive.google.com/file/d/1A79c0waIBHY5d9h6F-GbZw39X7-s06at/preview"
+                src="https://drive.google.com/file/d/1MTiSvOR669XAlDqESVw_3twy88jIYk3j/preview"
                 className="w-full h-[650px] md:h-[750px] rounded-xl"
                 title="Resume"
               />
@@ -883,7 +883,7 @@ const About = () => {
                 {/* Graduation */}
                 <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-6 border-l-[#e29591]/70">
                   <p className="text-white text-sm">ASU Master's Degree</p>
-                  <p className="text-white/60 text-xs">Graduating May 2026</p>
+                  <p className="text-white/60 text-xs">Graduated May 2026</p>
                 </div>
 
                 {/* Status */}
