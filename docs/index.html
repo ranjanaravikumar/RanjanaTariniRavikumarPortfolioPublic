@@ -2,41 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem('spa-redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa-redirect');
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ranjana Tarini Ravikumar - Portfolio</title>
+
+    
+
     <meta name="description" content="Personal portfolio of Ranjana Tarini Ravikumar - Software Developer & Designer" />
     <meta name="author" content="Ranjana Tarini Ravikumar" />
 
-    <!-- Poppins Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/RanjanaTariniRavikumarPortfolioPublic/assets/favicon-CA90FL9B.png" />
 
     <meta property="og:title" content="Ranjana Tarini Ravikumar - Portfolio" />
     <meta property="og:description" content="Personal portfolio of Ranjana Tarini Ravikumar - Software Developer & Designer" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://ranjanaravikumar.github.io/RanjanaTariniRavikumarPortfolioPublic/assets/me-hero-Bo8AiRvG.jpg" />
+    <meta property="og:image" content="/RanjanaTariniRavikumarPortfolioPublic/assets/me-hero-Bo8AiRvG.jpg" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://ranjanaravikumar.github.io/RanjanaTariniRavikumarPortfolioPublic/assets/me-hero-Bo8AiRvG.jpg" />
-    <script type="module" crossorigin src="/RanjanaTariniRavikumarPortfolioPublic/assets/index-geup2ewM.js"></script>
-    <link rel="modulepreload" crossorigin href="/RanjanaTariniRavikumarPortfolioPublic/assets/vendor-D96Tin0q.js">
-    <link rel="modulepreload" crossorigin href="/RanjanaTariniRavikumarPortfolioPublic/assets/ui-CJG2Glhl.js">
+    <meta name="twitter:image" content="/RanjanaTariniRavikumarPortfolioPublic/assets/me-hero-Bo8AiRvG.jpg" />
+
+    <script type="module" crossorigin src="/RanjanaTariniRavikumarPortfolioPublic/assets/index-CWIUfoxi.js"></script>
     <link rel="stylesheet" crossorigin href="/RanjanaTariniRavikumarPortfolioPublic/assets/index-tj1L-tj_.css">
   </head>
-   <body>
-    <div id="root"></div>
-    <script>
-      (function () {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== window.location.pathname) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
+  <body>
+    <div id="root"></div>
   </body>
 </html>
