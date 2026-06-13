@@ -1,6 +1,7 @@
 import { GlassCard, GlassCardContent, GlassCardHeader, GlassCardTitle } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { Github, Linkedin, Mail, Phone, ArrowRight } from "lucide-react"
+import { Link } from "react-router-dom"
 import backgroundImage from "@/assets/background.webp"
 import profilePic from "@/assets/Ranjana-Tarini-Ravikumar.webp"
 
@@ -12,9 +13,6 @@ const Portfolio = () => {
     { icon: Phone, href: "tel:+16237595172", label: "Phone" },
     { icon: Mail, href: "mailto:rraviku8@asu.edu", label: "Email" }
   ]
-
-const getBasePath = (path: string) => `/RanjanaTariniRavikumarPortfolioPublic${path}`
-
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -61,10 +59,10 @@ const getBasePath = (path: string) => `/RanjanaTariniRavikumarPortfolioPublic${p
                     className="bg-white/20 text-white hover:bg-white hover:text-black px-6 lg:px-8 py-3 text-base font-medium group w-full sm:w-auto border border-white/30"
                     asChild
                   >
-                    <a href={getBasePath("/about")}>
+                    <Link to="/about">
                       About Me
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                   </GlassButton>
 
                   {/* Social Links */}
