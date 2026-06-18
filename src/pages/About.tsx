@@ -239,6 +239,7 @@ const About = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Projects</h2>
             <div className="grid gap-6">
+
               {/* Project 1: SupplementsRx AI */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <h3 className="text-xl font-semibold text-white mb-3">SupplementsRx AI – Unified RAG Chatbot</h3>
@@ -254,7 +255,7 @@ const About = () => {
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
                 </div>
                 <div className="flex gap-3">
-                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
+                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20" asChild>
                     <a href="https://github.com/ranjanaravikumar/Supplementsrx_AI" target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4 mr-2" />
                       Code
