@@ -242,7 +242,7 @@ const About = () => {
               {/* Project 1: SupplementsRx AI */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <h3 className="text-xl font-semibold text-white mb-3">SupplementsRx AI – Unified RAG Chatbot</h3>
-                <p className="text-white/80 mb-4">AI-powered RAG chatbot with dual-retrieval pipeline for evidence-based supplement recommendations. Achieved 85%+ groundedness accuracy and reduced manual literature review time by 43%.</p>
+                <p className="text-white/80 mb-4">6-person ASU course project (CSE 573). Built a RAG chatbot for diabetes supplement guidance combining Neo4j knowledge graph and Sentence Transformer embeddings with Gemini LLM synthesis. My contributions: data preprocessing pipeline, evaluation framework design (nDCG@5, groundedness, macro-F1), presentation assets, and project documentation. Achieved 0.66 nDCG@5 and 0.65 groundedness on held-out discussion-board Q&A. Achieved 85%+ groundedness accuracy and reduced manual literature review time by 43%.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">FastAPI</span>
                   <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Neo4j</span>
@@ -260,10 +260,10 @@ const About = () => {
                       Code
                     </a>
                   </GlassButton>
-                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
+                  {/* <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Live
-                  </GlassButton>
+                  </GlassButton> */}
                 </div>
               </div>
 
@@ -443,10 +443,10 @@ const About = () => {
                       Code
                     </a>
                   </GlassButton>
-                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
+                  {/* <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Live
-                  </GlassButton>
+                  </GlassButton> */}
                 </div>
               </div>
 
@@ -486,6 +486,41 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
+                    <h3 className="text-xl font-semibold text-white">Software Development Engineer</h3>
+                    <p className="text-white/80">JP Morgan Chase & CO.</p>
+                  </div>
+                  <div className="text-right text-white/70 text-sm">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Calendar className="h-4 w-4" />
+                      Sep 2025 – Present
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="h-4 w-4" />
+                      United States
+                    </div>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-white/80">
+                  <li>• Orchestrated WhatsApp Cloud API ingestion on AWS (Lambda, EC2), storing images in S3 and metadata in DynamoDB.
+                  </li>
+                  <li>• Automated secure S3 upload via pre-signed URLs, reducing manual transfer while preserving controlled access to research data.
+                  </li>
+                  <li>• Standardized YOLO dataset curation (Roboflow + Label Studio); eliminated 90%+ malformed bbox annotations pre-training.
+                  </li>
+                  <li>• Optimized YOLO-NAS training 55x (12h→13m/epoch) via GPU acceleration + mixed precision on 2,000+ fruit images.
+                  </li>
+                  <li>• Accelerated experimentation by running 20+ YOLO-NAS variants across 6 defect classes using a repeatable training workflow.
+                  </li>
+                  <li>• Instrumented ingestion with CloudWatch logs/metrics + dashboards/alerts to monitor throughput and detect failures early.
+                  </li>
+                </ul>
+              </div>
+
+
+              {/* Experience 2 */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
                     <h3 className="text-xl font-semibold text-white">Research Volunteer</h3>
                     <p className="text-white/80">Fae Labs, Texas, USA</p>
                   </div>
@@ -501,16 +536,26 @@ const About = () => {
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80">
-                  <li>• Optimized YOLO-NAS training from 12 hours to 13 minutes per epoch (55x speedup) using GPU acceleration and mixed precision on 2,000+ fruit images.
+                  <li>• Orchestrated WhatsApp Cloud API ingestion on AWS (Lambda, EC2), storing images in S3 and metadata in DynamoDB.
                   </li>
-                  <li>• Built an automated dataset curation pipeline with Roboflow and Label Studio, standardizing YOLO annotations and eliminating 90%+ malformed label files.
+                  <li>• Automated secure S3 upload via pre-signed URLs, reducing manual transfer while preserving controlled access to research data.
                   </li>
-                  <li>• Integrated WhatsApp Cloud API with AWS Lambda, EC2, and DynamoDB to automate image ingestion and metadata storage at scale.
+                  <li>• Standardized YOLO dataset curation (Roboflow + Label Studio); eliminated 90%+ malformed bbox annotations pre-training.
+                  </li>
+                  <li>• Optimized YOLO-NAS training 55x (12h→13m/epoch) via GPU acceleration + mixed precision on 2,000+ fruit images.
+                  </li>
+                  <li>• Accelerated experimentation by running 20+ YOLO-NAS variants across 6 defect classes using a repeatable training workflow.
+                  </li>
+                  <li>• Instrumented ingestion with CloudWatch logs/metrics + dashboards/alerts to monitor throughput and detect failures early.
                   </li>
                 </ul>
               </div>
 
-              {/* Experience 2: Excelacom */}
+
+
+
+
+              {/* Experience 2: Excelacom
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -530,28 +575,64 @@ const About = () => {
                 </div>
                 <ul className="space-y-2 text-white/80">
                   <li>
-                    • Reverse‑engineered an existing RASA + LangChain chatbot pipeline to understand
-                    intent classification and entity extraction flows.
+                    • Developed a PoC GenAI chatbot (Python, RASA, LangChain), implementing intent classification and entity extraction.
                   </li>
                   <li>
-                    • Cleaned and prepared datasets with Python and Pandas for CatBoost experiments,
-                    improving model performance by ~15% through feature engineering.
+                    • Streamlined Pandas preprocessing + feature engineering for CatBoost experiments; improved model performance by 15%.
                   </li>
                   <li>
-                    • Participated in weekly code reviews, suggesting optimizations that reduced batch
-                    preprocessing time by ~12%.
+                    • Refactored preprocessing scripts and fixed data-quality issues; reduced batch runtime by 12% and improved maintainability.
+                  </li>
+                  <li>
+                    • Automated CatBoost evaluation across 70+ runs, cutting comparison time by 64% and auto-flagging metric regressions.
+                  </li>
+                </ul>
+              </div> */}
+
+              
+              {/* Experience 3 */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Software Engineer</h3>
+                    <p className="text-white/80">LTIMindtree</p>
+                  </div>
+                  <div className="text-right text-white/70 text-sm">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Calendar className="h-4 w-4" />
+                      Feb 2022 – Jul 2024
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="h-4 w-4" />
+                      India
+                    </div>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-white/80">
+                  <li>• Orchestrated WhatsApp Cloud API ingestion on AWS (Lambda, EC2), storing images in S3 and metadata in DynamoDB.
+                  </li>
+                  <li>• Automated secure S3 upload via pre-signed URLs, reducing manual transfer while preserving controlled access to research data.
+                  </li>
+                  <li>• Standardized YOLO dataset curation (Roboflow + Label Studio); eliminated 90%+ malformed bbox annotations pre-training.
+                  </li>
+                  <li>• Optimized YOLO-NAS training 55x (12h→13m/epoch) via GPU acceleration + mixed precision on 2,000+ fruit images.
+                  </li>
+                  <li>• Accelerated experimentation by running 20+ YOLO-NAS variants across 6 defect classes using a repeatable training workflow.
+                  </li>
+                  <li>• Instrumented ingestion with CloudWatch logs/metrics + dashboards/alerts to monitor throughput and detect failures early.
                   </li>
                 </ul>
               </div>
 
-              {/* Experience 3: SmartInternz */}
+
+              {/* Experience 4: SmartInternz */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-white">
                       Modern Application Development Trainee
                     </h3>
-                    <p className="text-white/80">SmartInternz, Hyderabad, India</p>
+                    <p className="text-white/80">SmartInternz</p>
                   </div>
                   <div className="text-right text-white/70 text-sm">
                     <div className="flex items-center gap-1 mb-1">
@@ -566,16 +647,16 @@ const About = () => {
                 </div>
                 <ul className="space-y-2 text-white/80">
                   <li>
-                    • Built Spring Boot REST APIs for an e‑commerce app (FOODYS) handling registration,
-                    restaurant data, and order workflows using Git for collaboration.
+                   • Delivered 8 Spring Boot REST endpoints for FOODYS (browse, cart, checkout) and collaborated via Git in a team workflow.
                   </li>
                   <li>
-                    • Designed MongoDB schemas and aggregation pipelines for personalized
-                    recommendations and real‑time restaurant availability.
+                    • Modeled MongoDB collections + aggregation pipelines for personalized recommendations and real-time restaurant availability.
                   </li>
                   <li>
-                    • Implemented React.js UI and containerized the stack with Docker and Kubernetes,
-                    enabling horizontal scaling to 1,000+ concurrent sessions.
+                    • Reduced deployment time by 25% and enabled horizontal scaling to 1,000+ concurrent sessions using Docker and Kubernetes.
+                  </li>
+                  <li>
+                    • Improved user satisfaction by 11% by streamlining ordering flows across the React.js frontend and Spring Boot backend.
                   </li>
                 </ul>
               </div>
@@ -701,6 +782,40 @@ const About = () => {
                   Covers supervised and unsupervised learning, model evaluation, and scikit-learn-based ML workflows.
                 </p>
               </div>
+
+              {/* Udemy */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <Award className="h-6 w-6 text-white" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Master Spring Boot 3 & Spring Framework 6 with Java</h3>
+                      <p className="text-white/80">Udemy </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <GlassButton
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="hover:bg-white/20 hover:text-white border-white/20"
+                    >
+                      <a
+                        href="https://drive.google.com/file/d/1VoNNy3meLZp_cYWEzqw4NGfgPNyQtQzf/view?usp=sharing" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Eye className="h-4 w-4 mr-2" />
+                        View Credential
+                      </a>
+                    </GlassButton>
+                  </div>
+                </div>
+                <p className="text-white/80">
+                  Validates cloud fundamentals, core AWS services, security, and cost management.
+                </p>
+              </div>
+
             </div>
           </div>
         )
@@ -739,7 +854,7 @@ const About = () => {
                   </div>
                 </div>
                 <p className="text-white/80 mb-3">
-                  Software Verification • Data Mining • Data Visualization • Statistical Machine Learning
+                  Software Verification • Data Mining • Data Visualization • Statistical Machine Learning <hr/>
                   ASU's vibrant community and collaborative culture transformed my perspective on work-life balance, 
                   cultural diversity, and the importance of building meaningful connections beyond academics.
                   Volunteered with ICA (Indian Cultural Association), organizing community events and fostering 
@@ -772,10 +887,10 @@ const About = () => {
                 </div>
                 <p className="text-white/80">
                   OOPS • Design & Algorithms • DBMS • AI • Expert Systems • Cyber Security <hr />
+                  Gained comprehensive computer science fundamentals while discovering my passion and gaining soft skills. 
                   Coordinated Zero Waste Management Club, scaling campus-wide recycling participation and partnering with local organizations for 
                   sustainable practices. Organized Catalyst Club technical events including noticable the "Kryptonian" challenge, fostering collaborative 
                   problem-solving among 100+ participants.
-                  Gained comprehensive computer science fundamentals while discovering my passion and gaining soft skills. 
                 </p>
               </div>
             </div>
@@ -804,6 +919,25 @@ const About = () => {
                 <p className="text-white/80 leading-relaxed">
                   Awarded for academic excellence and demonstrating exceptional potential in computer science. 
                   Recognizes outstanding achievement and commitment to technical innovation and research.
+                </p>
+              </div>
+
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Engineering Graduate Fellowship</h3>
+                      <p className="text-white/80 text-sm">Issued by Ira A. Fulton Schools of Engineering, Arizona State University · May 2024</p>
+                      <p className="text-white/70 text-xs mt-1">Arizona State University</p>
+                    </div>
+                  </div>
+                  <div className="text-right text-white/70">
+                    <div className="text-sm font-medium">Software / Computer Engineering</div>
+                    <div className="text-xs">MS students</div>
+                  </div>
+                </div>
+                <p className="text-white/80 leading-relaxed">
+                  This competitive fellowship supports exceptional graduate students pursuing advanced degrees in engineering and computer science at Arizona State University.
                 </p>
               </div>
             </div>
@@ -896,8 +1030,8 @@ const About = () => {
 
                 {/* Location */}
                 <div className="p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur border-l-6 border-l-[#e29591]/70">
-                  <p className="text-white text-sm">Arizona State University</p>
-                  <p className="text-white/60 text-xs">Tempe, AZ, USA</p>
+                  <p className="text-white text-sm">Open to Relocation</p>
+                  <p className="text-white/60 text-xs">Unites States</p>
                 </div>
               </div>
 
