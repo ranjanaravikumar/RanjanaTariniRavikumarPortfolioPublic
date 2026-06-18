@@ -255,8 +255,10 @@ const About = () => {
                 </div>
                 <div className="flex gap-3">
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
+                    <a href="https://github.com/ranjanaravikumar/Supplementsrx_AI" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </a>
                   </GlassButton>
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
                     <ExternalLink className="h-4 w-4 mr-2" />
