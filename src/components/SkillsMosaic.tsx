@@ -6,7 +6,7 @@ const SkillsMosaic = () => {
     {
       category: 'Programming Languages',
       color: 'dark-red',
-      skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'Go', 'Rust', 'SQL', 'R'],
+      skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'SQL'],
     },
     {
       category: 'Frontend Development',
@@ -16,7 +16,7 @@ const SkillsMosaic = () => {
     {
       category: 'Backend & APIs',
       color: 'dark-red',
-      skills: ['Node.js', 'Express.js', 'Express', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Microservices', 'REST APIs', 'GraphQL', 'Hibernate'],
+      skills: ['Node.js', 'Express.js', 'Express', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Microservices', 'REST APIs', 'GraphQL', 'Hibernate', 'gRPC'],
     },
     {
       category: 'AI/ML & Data Science',
@@ -28,9 +28,9 @@ const SkillsMosaic = () => {
       ],
     },
     {
-      category: 'AI Data Systems',
+      category: 'AI & LLM Systems',
       color: 'dark-red',
-      skills: ['LangChain', 'Vector Databases', 'FAISS', 'Pinecone'],
+      skills: ['LangChain', 'Vector Databases', 'FAISS', 'Pinecone', 'LangGraph', 'Agentic AI', 'Fine-tuning'],
     },
     {
       category: 'System Design & Architecture',
@@ -45,12 +45,12 @@ const SkillsMosaic = () => {
     {
       category: 'Databases & Storage',
       color: 'dark-red',
-      skills: ['PostgreSQL', 'Redis', 'MySQL', 'MongoDB', 'DynamoDB', 'SQL Optimization', 'Indexing', 'Query Tuning'],
+      skills: ['PostgreSQL', 'Redis', 'MySQL', 'MongoDB', 'DynamoDB', 'SQL Optimization', 'Indexing', 'Query Tuning', 'Neo4j', 'Elasticsearch', 'asyncpg'],
     },
     {
       category: 'Messaging & Streaming',
       color: 'dark-red',
-      skills: ['Apache Kafka', 'RabbitMQ', 'Consumer Groups', 'Dead Letter Queues'],
+      skills: ['Apache Kafka', 'RabbitMQ', 'Consumer Groups', 'Dead Letter Queues', 'Redis Pub/Sub'],
     },
     {
       category: 'Testing & Observability',

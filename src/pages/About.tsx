@@ -213,7 +213,7 @@ const About = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1MTiSvOR669XAlDqESVw_3twy88jIYk3j"
+                  href="https://drive.google.com/uc?export=download&id=1Rg8i16dnr9paOYPkarbktMoht9AY5ErB"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,7 +224,7 @@ const About = () => {
             </div>
             <div className="bg-white/10 rounded-lg p-6 border border-white/20 max-w-4xl mx-auto">
               <iframe
-                src="https://drive.google.com/file/d/1MTiSvOR669XAlDqESVw_3twy88jIYk3j/preview"
+                src="https://drive.google.com/file/d/1Rg8i16dnr9paOYPkarbktMoht9AY5ErB/preview"
                 className="w-full h-[650px] md:h-[750px] rounded-xl"
                 title="Resume"
               />
@@ -344,6 +344,29 @@ const About = () => {
                   <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Live
+                  </GlassButton>
+                </div>
+              </div>
+
+              {/* Project 10: TransactIQ */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <h3 className="text-xl font-semibold text-white mb-3">TransactIQ – GenAI Transaction Processing Platform</h3>
+                <p className="text-white/80 mb-4">Distributed transaction processing platform with an LLM-driven RAG assistant for contextual product discovery. Achieved 85%+ retrieval relevance accuracy across 3K+ documents and sub-300ms API response times.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Django</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">React.js</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">PostgreSQL</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Redis</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Celery</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">LangChain</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">RAG</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">LLMs</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Python</span>
+                </div>
+                <div className="flex gap-3">
+                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
+                    <Github className="h-4 w-4 mr-2" />
+                    Code
                   </GlassButton>
                 </div>
               </div>
@@ -487,8 +510,8 @@ const About = () => {
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">Software Development Engineer</h3>
-                    <p className="text-white/80">JP Morgan Chase & CO.</p>
+                    <h3 className="text-xl font-semibold text-white">AI Software Engineer</h3>
+                    <p className="text-white/80">JP Morgan Chase & Co., New York, USA</p>
                   </div>
                   <div className="text-right text-white/70 text-sm">
                     <div className="flex items-center gap-1 mb-1">
@@ -497,26 +520,18 @@ const About = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
-                      United States
+                      New York, Hybrid
                     </div>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80">
-                  <li>• Orchestrated WhatsApp Cloud API ingestion on AWS (Lambda, EC2), storing images in S3 and metadata in DynamoDB.
-                  </li>
-                  <li>• Automated secure S3 upload via pre-signed URLs, reducing manual transfer while preserving controlled access to research data.
-                  </li>
-                  <li>• Standardized YOLO dataset curation (Roboflow + Label Studio); eliminated 90%+ malformed bbox annotations pre-training.
-                  </li>
-                  <li>• Optimized YOLO-NAS training 55x (12h→13m/epoch) via GPU acceleration + mixed precision on 2,000+ fruit images.
-                  </li>
-                  <li>• Accelerated experimentation by running 20+ YOLO-NAS variants across 6 defect classes using a repeatable training workflow.
-                  </li>
-                  <li>• Instrumented ingestion with CloudWatch logs/metrics + dashboards/alerts to monitor throughput and detect failures early.
-                  </li>
+                  <li>• Engineered a GenAI enterprise knowledge platform using Python, LangChain, RAG, and FAISS vector search, automating 15K+ weekly operational queries across internal banking support teams.</li>
+                  <li>• Architected a FastAPI + gRPC payment authorization middleware supporting 90K+ daily transactions with sub-100ms latency.</li>
+                  <li>• Designed a distributed ledger system using asyncpg, partitioned PostgreSQL, and Redis caching — reduced balance retrieval latency by 70% (100ms → 30–45ms) with ACID consistency.</li>
+                  <li>• Modernized legacy batch workflows into Kubernetes-based Python microservices with Celery and Redis, cutting processing time by 50–60%.</li>
+                  <li>• Reinforced API security with OAuth2/JWT and RBAC; streamlined CI/CD with Docker and Kubernetes, reducing deployment time from 20–25 min to 8–12 min.</li>
                 </ul>
               </div>
-
 
               {/* Experience 2 */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
@@ -609,20 +624,14 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <ul className="space-y-2 text-white/80">
-                  <li>• Orchestrated WhatsApp Cloud API ingestion on AWS (Lambda, EC2), storing images in S3 and metadata in DynamoDB.
-                  </li>
-                  <li>• Automated secure S3 upload via pre-signed URLs, reducing manual transfer while preserving controlled access to research data.
-                  </li>
-                  <li>• Standardized YOLO dataset curation (Roboflow + Label Studio); eliminated 90%+ malformed bbox annotations pre-training.
-                  </li>
-                  <li>• Optimized YOLO-NAS training 55x (12h→13m/epoch) via GPU acceleration + mixed precision on 2,000+ fruit images.
-                  </li>
-                  <li>• Accelerated experimentation by running 20+ YOLO-NAS variants across 6 defect classes using a repeatable training workflow.
-                  </li>
-                  <li>• Instrumented ingestion with CloudWatch logs/metrics + dashboards/alerts to monitor throughput and detect failures early.
-                  </li>
-                </ul>
+              <ul className="space-y-2 text-white/80">
+                <li>• Orchestrated a high-throughput checkout system using Spring Boot with Redis caching and request deduplication, supporting 12K–18K concurrent checkout sessions during peak sales.</li>
+                <li>• Established event-driven order processing pipelines using Kafka with partitioned topics, enabling 6K–10K events/minute across order, payment, and inventory workflows.</li>
+                <li>• Refined search performance using Elasticsearch with analyzer tuning and shard optimization, reducing query latency under load.</li>
+                <li>• Transitioned relational data from MySQL to PostgreSQL with partitioning and indexing, improving analytical query performance from 12–15s to 3–6s.</li>
+                <li>• Crafted performance-optimized Angular modules for cart and pricing workflows, improving UI responsiveness by 80–120ms using memoization.</li>
+                <li>• Deployed Grafana + Prometheus observability stack, reducing incident detection time (MTTD) by 30–40% through structured alerting dashboards.</li>
+              </ul>
               </div>
 
 
