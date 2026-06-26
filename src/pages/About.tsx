@@ -492,10 +492,6 @@ const About = () => {
                     <Github className="h-4 w-4 mr-2" />
                     Code
                   </GlassButton>
-                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live
-                  </GlassButton>
                 </div>
               </div>
             </div>
