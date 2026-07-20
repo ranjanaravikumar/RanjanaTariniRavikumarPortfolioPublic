@@ -213,7 +213,7 @@ const About = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1Rg8i16dnr9paOYPkarbktMoht9AY5ErB"
+                  href="https://drive.google.com/uc?export=download&id=1DYium2E2L5SRLb9e8RAXEBIltIMW2ZCZ"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,7 +224,7 @@ const About = () => {
             </div>
             <div className="bg-white/10 rounded-lg p-6 border border-white/20 max-w-4xl mx-auto">
               <iframe
-                src="https://drive.google.com/file/d/1Rg8i16dnr9paOYPkarbktMoht9AY5ErB/preview"
+                src="https://drive.google.com/file/d/1DYium2E2L5SRLb9e8RAXEBIltIMW2ZCZ/preview"
                 className="w-full h-[650px] md:h-[750px] rounded-xl"
                 title="Resume"
               />
@@ -239,6 +239,27 @@ const About = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Projects</h2>
             <div className="grid gap-6">
+
+              {/* Project 0: AI Insurance Claims Assistant */}
+              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+                <h3 className="text-xl font-semibold text-white mb-3">AI Insurance Claims Assistant</h3>
+                <p className="text-white/80 mb-4">Built a multi-agent AI claims-processing platform (FastAPI, PostgreSQL, Celery + Redis) integrating a 6-agent orchestration service to automate insurance claim intake and decision support across web and Plivo voice channels, with human-in-the-loop override safeguards and full audit tracking.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">FastAPI</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Next.js</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">PostgreSQL</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Celery</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Redis</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Plivo</span>
+                  <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">Multi-Agent AI</span>
+                </div>
+                <div className="flex gap-3">
+                  <GlassButton variant="ghost" size="sm" className="hover:bg-white/20 hover:text-white border-white/20">
+                    <Github className="h-4 w-4 mr-2" />
+                    Code
+                  </GlassButton>
+                </div>
+              </div>
 
               {/* Project 1: SupplementsRx AI */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
@@ -502,30 +523,28 @@ const About = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Experience</h2>
             <div className="space-y-6">
-              {/* Experience 1 */}
+              {/* Experience: qBotica */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">AI Software Engineer</h3>
-                    <p className="text-white/80">JP Morgan Chase & Co., New York, USA</p>
+                    <h3 className="text-xl font-semibold text-white">AI Intern</h3>
+                    <p className="text-white/80">qBotica, Inc., Remote</p>
                   </div>
                   <div className="text-right text-white/70 text-sm">
                     <div className="flex items-center gap-1 mb-1">
                       <Calendar className="h-4 w-4" />
-                      Sep 2025 – Present
+                      Jul 2026 – Present
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
-                      New York, Hybrid
+                      Remote (Phoenix, AZ)
                     </div>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80">
-                  <li>• Engineered a GenAI enterprise knowledge platform using Python, LangChain, RAG, and FAISS vector search, automating 15K+ weekly operational queries across internal banking support teams.</li>
-                  <li>• Architected a FastAPI + gRPC payment authorization middleware supporting 90K+ daily transactions with sub-100ms latency.</li>
-                  <li>• Designed a distributed ledger system using asyncpg, partitioned PostgreSQL, and Redis caching — reduced balance retrieval latency by 70% (100ms → 30–45ms) with ACID consistency.</li>
-                  <li>• Modernized legacy batch workflows into Kubernetes-based Python microservices with Celery and Redis, cutting processing time by 50–60%.</li>
-                  <li>• Reinforced API security with OAuth2/JWT and RBAC; streamlined CI/CD with Docker and Kubernetes, reducing deployment time from 20–25 min to 8–12 min.</li>
+                  <li>• Support AI and ML research initiatives, including data collection, preparation, and analysis, as part of the Services team.</li>
+                  <li>• Develop, test, and document AI-driven solutions in collaboration with teammates on active technology and innovation projects.</li>
+                  <li>• Prepare technical reports, presentations, and documentation to communicate project progress and outcomes.</li>
                 </ul>
               </div>
 
@@ -567,7 +586,7 @@ const About = () => {
 
 
 
-              {/* Experience 2: Excelacom
+              {/* Experience: Excelacom */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -599,37 +618,7 @@ const About = () => {
                     • Automated CatBoost evaluation across 70+ runs, cutting comparison time by 64% and auto-flagging metric regressions.
                   </li>
                 </ul>
-              </div> */}
-
-              
-              {/* Experience 3 */}
-              <div className="bg-white/10 rounded-lg p-6 border border-white/20">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">Software Engineer</h3>
-                    <p className="text-white/80">LTIMindtree</p>
-                  </div>
-                  <div className="text-right text-white/70 text-sm">
-                    <div className="flex items-center gap-1 mb-1">
-                      <Calendar className="h-4 w-4" />
-                      Feb 2022 – Jul 2024
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-4 w-4" />
-                      India
-                    </div>
-                  </div>
-                </div>
-              <ul className="space-y-2 text-white/80">
-                <li>• Orchestrated a high-throughput checkout system using Spring Boot with Redis caching and request deduplication, supporting 12K–18K concurrent checkout sessions during peak sales.</li>
-                <li>• Established event-driven order processing pipelines using Kafka with partitioned topics, enabling 6K–10K events/minute across order, payment, and inventory workflows.</li>
-                <li>• Refined search performance using Elasticsearch with analyzer tuning and shard optimization, reducing query latency under load.</li>
-                <li>• Transitioned relational data from MySQL to PostgreSQL with partitioning and indexing, improving analytical query performance from 12–15s to 3–6s.</li>
-                <li>• Crafted performance-optimized Angular modules for cart and pricing workflows, improving UI responsiveness by 80–120ms using memoization.</li>
-                <li>• Deployed Grafana + Prometheus observability stack, reducing incident detection time (MTTD) by 30–40% through structured alerting dashboards.</li>
-              </ul>
               </div>
-
 
               {/* Experience 4: SmartInternz */}
               <div className="bg-white/10 rounded-lg p-6 border border-white/20">
